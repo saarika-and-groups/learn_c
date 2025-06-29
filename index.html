@@ -22,6 +22,13 @@
     <div class="box" onclick="showDetails('control')">Control Flow</div>
     <div class="box" onclick="showDetails('functions')">Functions</div>
     <div class="box" onclick="showDetails('arrays')">Arrays</div>
+    <div class="box" onclick="showDetails('pointers')">pointer</div>
+    <div class="box" onclick="showDetails('memorymanagement')">Memory Management</div>
+    <div class="box" onclick="showDetails('structunienum')">Stuctures, Unions and enums</div>
+    <div class="box" onclick="showDetails('filehandling')">File Handling</div>
+    <div class="box" onclick="showDetails('dynamic')">Dynamic Memory Allocation</div>
+    <div class="box" onclick="showDetails('prepro')">Preproccessor Derectives And marcos</div>
+    <div class="box" onclick="showDetails('error')">Error Handling and Debugging Techniques</div>
   </div>
 
   <div class="details" id="intro">
@@ -990,6 +997,1023 @@ int main() {
     </ul>
 
   </div>
+  <div class="details" id="pointers">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Pointers</h3>
+    <p>A pointer is a variable that stores the memory address of another variable. Instead of holding a direct value,
+       it holds the address where the value is stored in memory. It is the backbone of low-level memory manipulation in C.
+       Accessing the pointer directly will just give us the address that is stored in the pointer.For Example,</p>
+    <pre>
+      #include <stdio.h>
+
+     int main() {
+        int var = 10;
+    
+        // Store address of var variable
+        int* ptr = &var;
+    
+        // Directly accessing ptr
+        printf("%d", ptr);
+    
+      return 0;
+   }
+    </pre>
+    <h3>output :</h3>
+    <pre>0x7fffa0757dd4</pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20241210113214643291/pointer-in-c.png "
+      alt="arrays-in-c">
+    <p>Why Learn Pointer?
+        <ul>
+          <li>To access memory directly</li>
+          <li>To pass large data(like arrays, structures) efficiently to function</li>
+          <li>To return multiple values from a function</li>
+          <li>For dynamic memory allocation.</li>
+          <li>To build complex data structures like linked lists, trees, etc.</li>
+        </ul>  
+    </p>
+
+  </div>
+  <div class="details" id="pointers">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Decleration of pointer</h3>
+    <p>A pointer is declared by specifying its name and type, just like simple variable declaration but with an asterisk (*) symbol added before the pointer's name.</p>
+    <h3>Syntax:</h3>
+    <pre>data_type* name</pre>
+    <p>Here, data_type defines the type of data that the pointer is pointing to.
+    An integer type pointer can only point to an integer. Similarly, a pointer of float type can point to a floating-point data, and so on.</p>
+    <h3>Example:</h3>
+    <pre>int *ptr;</pre>
+    <p>In the above statement, pointer ptr can store the address of an integer. It is pronounced as pointer to integer.</p>
+    <h3>Intialize the pointer</h3>
+    <p>Pointer initialization means assigning some address to the pointer variable.
+    In C, the (&) addressof operator is used to get the memory address of any variable. This memory address is then stored in a pointer variable.</p>
+    <h3>Example:</h3>
+    <pre>int var = 10; 
+
+      // Initializing ptr
+      int *ptr = &var;</pre>
+
+    <h3>Size of pointers</h3>
+    <p>The size of a pointer in C depends on the architecture (bit system) of the machine, not the data type it points to.</p>
+    <li>On a 32-bit system, all pointers typically occupy 4 bytes.</li>
+    <li>On a 64-bit system, all pointers typically occupy 8 bytes.</li>
+    <p>The size remains constant regardless of the data type (int*, char*, float*, etc.). We can verify this using the sizeof operator.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+       int main() {
+         int *ptr1;
+         char *ptr2;
+    
+         // Finding size using sizeof()
+         printf("%zu\n", sizeof(ptr1));
+         printf("%zu", sizeof(ptr2));
+    
+       return 0;
+      }
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      8
+      8
+    </pre>
+    <p>The reason for the same size is that the pointers store the memory addresses, no matter what type they are. 
+      As the space required to store the addresses of the different memory locations is the same,
+       the memory required by one pointer type will be equal to the memory required by other pointer types.</p>
+
+  </div>
+  <div class="details" id="pointers">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Spacial Typs Of Pointerss</h3>
+    <p>There are 4 special types of pointers that used or referred to in different contexts:</p>
+    <h3>Null Pointer</h3>
+    <p>The NULL Pointers are those pointers that do not point to any memory location.
+    They can be created by assigning NULL value to the pointer. A pointer of any type can be assigned the NULL value.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      int main() {
+       // Null pointer
+       int *ptr = NULL;
+    
+      return 0;
+    }
+    </pre>
+    <p>NULL pointers are generally used to represent the absence of any address. 
+    This allows us to check whether the pointer is pointing to any valid memory location by checking if it is equal to NULL.</p>
+    <h3>Void Pointer</h3>
+    <p>The void pointers in C are the pointers of type void.
+    It means that they do not have any associated data type. 
+    They are also called generic pointers as they can point to any type and can be typecasted to any type.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      int main() {
+        // Void pointer
+        void *ptr;
+    
+      return 0;
+    }
+    </pre>
+    <h3>Wild Pointer</h3>
+    <p>The wild pointers are pointers that have not been initialized with something yet.
+       These types of C-pointers can cause problems in our programs and can eventually cause them to crash.
+       If values are updated using wild pointers, they could cause data abort or data corruption.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      int main() {
+
+        // Wild Pointer
+        int *ptr;
+    
+      return 0;
+    }
+    </pre>
+    <h3>Dangling Pointer</h3>
+    <p>A pointer pointing to a memory location that has been deleted (or freed) is called a dangling pointer.
+       Such a situation can lead to unexpected behavior in the program and also serve as a source of bugs in C programs.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main() {
+        int* ptr = (int*)malloc(sizeof(int));
+
+        // After below free call, ptr becomes a dangling pointer
+        free(ptr);
+        printf("Memory freed\n");
+
+        // removing Dangling Pointer
+        ptr = NULL;
+
+      return 0;
+    }
+    </pre>
+  </div>
+  <div class="details" id="pointers">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/c-pointers/">GeeksforGeeks</a></li>
+    </ul>
+
+  </div>
+
+  <div class="details" id="memorymanagement">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Memory Management</h3>
+    <p>The memory layout of a program refers to how the program’s data is stored in the computer memory during its execution. Understanding this layout helps developers manage memory more efficiently and avoid issues such as segmentation faults and memory leaks.
+
+    A C program's memory is organized into specific regions (segments) as shown in the below image, each serving distinct purposes for program execution.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250122155858092295/Memory-Layout-of-C-Program.webp" alt="memory layout image">
+    <h3>Text Segment</h3>
+    <p>The text segment (also known as code segment) is where the executable code of the program is stored. 
+      It contains the compiled machine code of the program's functions and instructions.
+       This segment is usually read-only and stored in the lower parts of the memory to prevent accidental modification of the code while the program is running.
+
+    The size of the text segment is determined by the number of instructions and the complexity of the program.</p>
+    <h3>Data Segment</h3>
+    <p>The data segment stores global and static variables that are created by the programmer.
+       It is present just above the code segment of the program. It can be further divided into two parts:</p>
+    <h3>Heap Segment</h3>
+    <p>Heap segment is where dynamic memory allocation usually takes place. 
+      The heap area begins at the end of the BSS segment and grows towards the larger addresses from there. 
+      It is managed by functions such as malloc(), realloc(), and free() which in turn may use the brk and sbrk system calls to adjust its size.
+
+    The heap segment is shared by all shared libraries and dynamically loaded modules in a process.
+     For example, the variable pointed by ptr will be stored in the heap segment:</p>
+     <h3>Example:</h3>
+     <pre>
+      #include <stdio.h>
+
+      int main() {
+    
+        // Create an integer pointer
+        int *ptr = (int*) malloc(sizeof(int) * 10); 
+      return 0;
+     }
+     </pre>
+     <h3>Stack Segment</h3>
+     <p>The stack is a region of memory used for local variables and function call management.
+       Each time a function is called, a stack frame is created to store local variables, function parameters, and return addresses. 
+       This stack frame is stored in this segment.
+
+     The stack segment is generally located in the higher addresses of the memory and grows opposite to heap.
+      They adjoin each other so when stack and heap pointer meet, free memory of the program is said to be exhausted.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      void func() {
+    
+        // Stored in the stack
+         int local_var = 10;  
+      }
+
+      int main() {
+         func();
+      return 0;
+      }
+    </pre>
+    <h3>Example to Verify the Memory Layout</h3>
+    <pre>
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      // Global variable
+    int gvar = 66;
+
+      // Constant global variable
+      const int cgvar = 1010;
+
+      // uninitialized global variable
+    int ugvar;
+
+      void foo() {
+    
+         // Local variable
+         int lvar = 1;
+         printf("Address of lvar:\t%p", (void*)&lvar);
+      }
+
+    int main() {
+    
+      // Heap variable
+      int *hvar = (int*)malloc(sizeof(int));
+    
+    
+      // Checking and comparing address of different
+      // elements of program that should be stored in
+      // different segements of the memory
+      printf("Address of foo:\t\t%p\n", (void*)&foo);
+      printf("Address of cgvar:\t%p\n", (void*)&cgvar);
+      printf("Address of gvar:\t%p\n", (void*)&gvar);
+      printf("Address of ugvar:\t%p\n", (void*)&ugvar);
+      printf("Address of hvar:\t%p\n", (void*)hvar);
+      foo();
+    
+	  return 0;
+  }
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      Address of foo:         0x60d723996189
+      Address of cgvar:       0x60d723997004
+      Address of gvar:        0x60d723999010
+      Address of ugvar:       0x60d723999018
+      Address of hvar:        0x60d73b9072a0
+      Address of lvar:        0x7ffd0e85e0c4
+    </pre>
+
+  </div>
+  <div class="details" id="memorymanagement">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/memory-layout-of-c-program/">GeeksforGeeks</a></li>
+    </ul>
+
+  </div>
+  <div class="details" id="structunienum">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Structures</h3>
+    <p>In C, a structure is a user-defined data type that can be used to group items of possibly different types into a single type.
+       The struct keyword is used to define a structure. 
+      The items in the structure are called its member and they can be of any valid data type.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+        // Defining a structure
+      struct A {
+        int x;
+      };
+
+      int main() {
+  
+        // Creating a structure variable
+        struct A a;
+  	
+  	     // Initializing member
+  	     a.x = 11;
+
+         printf("%d", a.x);
+        return 0;
+      }
+    </pre>
+    <h3>Output:</h3>
+    <pre>11</pre>
+    <h3>Explination</h3>
+    <p> In this example, a structure A is defined to hold an integer member x.
+       A variable a of type struct A is created and its member x is initialized to 11 by accessing it using dot operator.
+       The value of a.x is then printed to the console.
+       
+       Structures are used when you want to store a collection of different data types, such as integers, floats, or even other structures under a single name.
+        To understand how structures are foundational to building complex data structures,</p>
+    <h3>Defining Structure</h3>
+    <p>A structure is defined using the struct keyword followed by the structure name and its members.
+       It is also called a structure template or structure prototype, and no memory is allocated to the structure in the declaration.</p>
+    <pre>
+      struct structure_name {
+      data_type1 member1;
+      data_type2 member2;
+      ...
+    };
+    </pre>
+    <li>structure_name: Name of the structure.</li>
+    <li>member1, member2, ...: Name of the members.</li>
+    <li>data_type1, data_type2, ...: Type of the members.</li>
+
+    <h3>Creating Structure Variable</h3>
+    <p>After structure definition, we have to create variable of that structure to use it. It is similar to the any other type of variable declaration:</p>
+    <pre>struct strcuture_name var;</pre>
+    <p>We can also declare structure variables with structure definition.</p>
+    <pre>
+      struct structure_name {
+      ...
+    }var1, var2....;
+    </pre>
+    <h3>Basic Operations of Structure</h3>
+    <ol>
+      <li> Access Structure Members</li>
+      <li>Initialize Structure Members</li>
+      <li> Copy Structure</li>
+      <li>Passing Structure to Functions</li>
+      <li>typedef for Structures</li>
+    </ol>
+
+    <h3>Uses Of stuctures</h3>
+    <p>
+      1.The structure can be used to define the custom data types that can be used to create some complex data types such as dates, time, complex numbers, etc.
+       which are not present in the language.
+      2.It can also be used in data organization where a large amount of data can be stored in different fields.
+      3.Structures are used to create data structures such as trees, linked lists, etc.
+      4.They can also be used for returning multiple values from a function.
+    </p>
+
+    
+  </div>
+  <div class="details" id="structunienum">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/structures-c/">GeeksforGeeks</a></li>
+    </ul>
+
+  </div>
+
+  <div class="details" id="structunienum">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Union</h3>
+    <p>In C, union is a user-defined data type that can contain elements of the different data types just like structure. 
+      But unlike structures, all the members in the C union are stored in the same memory location.
+       Due to this, only one member can store data at the given point in time.</p>
+    <h3>Union Declaration</h3>
+    <p>A union is declared similarly to a structure. Provide the name of the union and define its member variables:</p>
+    <pre>
+      union union_name{
+      type1 member1;
+      type2 member2;
+      type3 member3;
+      .       .
+      .       .
+    }
+    </pre>
+    <p>After declaration of a union then create a variable of union like below:</p>
+    <pre>union_name variable_name;</pre>
+    <p>We can also declare a variable at the declaration of union</p>
+    <pre>
+      union union_name{
+      type1 member1;
+      type2 member2;
+      type3 member3;
+      .       .
+      .       .
+    }variable_name;
+    </pre>
+    <h3>Initialization and Accessing</h3>
+    <p>The value of a union variable can be accessed using the dot (.) operator.
+       A value can be assigned to the union variable using the assignment operator (=).
+
+
+    In a union, all the variables share the same memory, so only one variable can store a value at a time.
+     If we try to access the value of another variable, the behavior will be undefined.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      // Define a union with 
+      // different data types
+      union Student {
+        int rollNo;
+        float height;
+        char firstLetter;
+      };
+
+      int main() {
+    
+       // Declare a union variable
+        union Student data;
+
+       // Assign and print the roll number
+       data.rollNo = 21;
+       printf("%d\n", data.rollNo);
+       data.height = 5.2;
+       printf("%.2f\n", data.height);
+       data.firstLetter = 'N';
+       printf("%c", data.firstLetter);
+
+      return 0;
+     }
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      21
+      5.20
+      N
+    </pre>
+
+  </div>
+  <div class="details" id="structunienum">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/c-unions/">GeeksforGeeks</a></li>
+    </ul>
+
+  </div>
+
+  <div class="details" id="structunienum">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>enums</h3>
+    <p>In C, an enumeration (or enum) is a user defined data type that contains a set of named integer constants. 
+      It is used to assign meaningful names to integer values, which makes a program easy to read and maintain.</p>
+    <h3>Defining enum</h3>
+    <p>An enum must be defined before we can use it in program.</p>
+    <pre>
+      enum enum_name { 
+      n1, n2, n3, ... 
+    };
+    </pre>
+    <p>where, n1, n2, n3, ... are names assigned to an integer value. By default, 
+      first name n1 is assigned 0, n2 is assigned 1 and the subsequent ones are incremented by 1.</p>
+    <h3>Example:</h3>
+    <pre>
+      enum calculate { 
+      SUM, DIFFERENCE, PRODUCT, QUOTIENT
+    };
+    </pre>
+    <h3>Create enum Variables</h3>
+    <p>After enum is defined, we can create variables of that enum by using its specified name.</p>
+    <pre>enum_name v;</pre>
+    <h3>Initialization</h3>
+    <p>An enum variable can be initialized either with a name defined in the enum definition or directly with its integer value.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      // Defining enum
+      enum direction {
+        EAST, NORTH, WEST, SOUTH
+      };
+
+      int main() {
+
+       // Creating enum variable
+       enum direction dir = NORTH;
+       printf("%d\n", dir);
+    
+       // This is valid too
+       dir = 3;
+       printf("%d", dir);
+       return 0;
+      } 
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      1
+      3
+    </pre>
+    <h3>Applications Of enum</h3>
+    <li>State Representation: Enums are commonly used to represent different states or modes in state machines, like in game development or process control systems.</li>
+    <li>Error Codes: Enums are useful for defining a set of related error codes with meaningful names, making the code easier to debug and maintain.</li>
+    <li>Menu Choices or User Inputs: Enums are useful for handling menu options or user input and can represent variety of user input such as days of the week.</li>
+    <li>File Permissions: Enums are useful for handling file permissions in an operating system or file management system, with different permission levels such as READ, WRITE, and EXECUTE.</li>
+    <div class="details" id="structunienum">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/enumeration-enum-c/">GeeksforGeeks</a></li>
+    </ul>
+
+  </div>
+  </div>
+  <div class="details" id="filehandling">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>File Handling</h3>
+    <p>File handling in C is the process in which we create, open, read, write, and close operations on a file. 
+      C language provides different functions such as fopen(), fwrite(), fread(), fseek(), fprintf(), etc.
+       to perform input, output, and many different C file operations in our program.</p>
+    <h3>Need of File Handling in C</h3>
+    <p>So far, the operations in C program are done on a prompt/terminal in which the data is only stored in the temporary memory (RAM).
+       This data is deleted when the program is closed. But in the software industry, most programs are written to store the information fetched from the program.
+        The use of file handling is exactly what the situation calls for.
+
+    File handling allows us to read and write data on files stored in the secondary memory such as hard disk from our C program.</p>
+    <h3>C File Operations</h3>
+    <p>C language provides the following different operations that we can perform on a file from our C program:</p>
+    <li>Creating a new file.</li>
+    <li>Opening an existing file.</li>
+    <li>Reading from file.</li>
+    <li>Writing to a file.</li>
+    <li>Moving to a specific location in a file.</li>
+    <li>Closing a file.</li>
+  </div>
+  <div class="details" id="filehandling">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>File</h3>
+    <p>A file is a container of data. It can be classified into two types based on the way the file stores the data. They are as follows:</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230503150409/Types-of-Files-in-C.webp" alt="fileimg">
+    <h3>Text files</h3>
+    <p>A text file contains data in the form of ASCII characters and is generally used to store a stream of characters.</p>
+    <li>Each line in a text file ends with a new line character ('\n').</li>
+    <li>It can be read or written by any text editor.</li>
+    <li>They are generally stored with .txt file extension.</li>
+    <li>Text files can also be used to store the source code.</li>
+    <h3>Binary Files</h3>
+    <p>A binary file contains data in binary form (i.e. 0's and 1's) instead of ASCII characters.
+       They contain data that is stored in a similar manner to how it is stored in the main memory.</p>
+    <li>The binary files can be created only from within a program and their contents can only be read by a program.</li>
+    <li>More secure as they are not easily readable.</li>
+    <li>They are generally stored with .bin file extension.</li>
+  </div>
+  <div class="details" id="filehandling">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>File Operations</h3>
+    <p>The file operations are performed by using the functions provided as the part of file handling API of C language.
+       Following is the list of commonly used functions:</p>
+       <img src="https://media.geeksforgeeks.org/wp-content/uploads/File-functions.jpg" alt="fileopeation">
+       <h3>Types of Operation</h3>
+      <li>Open a file</li>
+      <li>Read a file</li>
+      <li>Write a file</li>
+      <li>Close a file</li>
+      <li>Move pointer</li>
+      <li>check foe end</li>
+  </div>
+  <div class="details" id="filehandling">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/basics-file-handling-c/">GeeksforGeeks</a></li>
+    </ul>
+
+  </div>
+  <div class="details" id="dynamic">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Dynamic Memory Allocation</h3>
+    <p>In C, a variable defined in a function is stored in the stack memory. The requirement of this memory is that it needs to know the size of the data to memory at compile time (before the program runs).
+       Also, once defined, we can neither change the size nor completely delete the memory.
+
+    To resolve this, C provides a feature called Dynamic Memory Allocation. It allows you to allocate memory at runtime, giving your program the ability to handle data of varying sizes. 
+    Dynamic resources are stored in the heap memory instead of the stack.
+
+    This feature is useful in a variety of situations. For example, changing the size of an array according to our requirement.</p>
+    <h3>Need of Dynamic Memory Allocation</h3>
+    <p>As we know, the size of an array in C is fixed and should be known at compile time. There can be two problems:
+
+    The size of the array is not sufficient to store all the elements. To resolve this, one might set the size to store the maximum theoretically possible elements.
+    This creates another problem.This size of the array is much more than what is required to store the elements. This leads to the wastage of memory.
+    
+    This is where the dynamic memory allocation comes in. The size of the array can be increased if more elements are to be inserted and decreased of less elements are inserted. Moreover, there is no need to estimate the max possible size.
+     The size can be decided at runtime according to the requirement.
+  </p>
+  </div>
+  <div class="details" id="dynamic">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Types Of Dynamic Memory Allocation</h3>
+    <li>Malloc</li>
+    <li>Calloc</li>
+    <li>Free</li>
+    <li>Realloc</li>
+
+    <h3>*Malloc()</h3>
+    <p>The malloc() (stands for memory allocation) function is used to allocate a single block of contiguous memory on the heap at runtime. 
+      The memory allocated by malloc() is uninitialized, meaning it contains garbage values.</p>
+      <h3>Syntax:</h3>
+      <pre>malloc(size);</pre>
+      <p>where size is the number of bytes to allocate.
+
+      This function returns a void pointer to the allocated memory that needs to be converted to the pointer of required type to be usable.
+      If allocation fails, it returns NULL pointer.</p>
+      <h3>Example:</h3>
+      <pre>
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main() {
+        int *ptr = (int *)malloc(20);
+    
+         // Populate the array
+        for (int i = 0; i < 5; i++)
+           ptr[i] = i + 1;
+        
+           // Print the array
+        for (int i = 0; i < 5; i++)
+           printf("%d ", ptr[i]);
+        return 0;
+        }  
+      </pre>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250305233229499334/Malloc-function-in-c.webp" alt="malloc">
+      <h3>*Calloc()</h3>
+      <p>The calloc() (stands for contiguous allocation) function is similar to malloc(), but it initializes the allocated memory to zero. 
+        It is used when you need memory with default zero values.</p>
+      <h3>Syntax:</h3>
+      <pre>calloc(n, size);</pre>
+      <p>where n is the number of elements and size is the size of each element in bytes.
+
+      This function also returns a void pointer to the allocated memory that is converted to the pointer of required type to be usable.
+      If allocation fails, it returns NULL pointer.</p>
+      <h3>Example:</h3>
+      <pre>
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main() {
+         int *ptr = (int *)calloc(5, sizeof(int));
+    
+         // Checking if failed or pass
+         if (ptr == NULL) {
+            printf("Allocation Failed");
+            exit(0);
+          }
+    
+           // No need to populate as already
+           // initialized to 0
+        
+           // Print the array
+         for (int i = 0; i < 5; i++)
+            printf("%d ", ptr[i]);
+          return 0;
+        }
+      </pre>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250305233554088828/calloc-function-in-c.webp" alt="calloc">
+      <h3>*Free()</h3>
+      <p>The memory allocated using functions malloc() and calloc() is not de-allocated on their own. The free() function is used to release dynamically allocated memory back to the operating system.
+         It is essential to free memory that is no longer needed to avoid memory leaks.</p>
+      <h3>Syntax:</h3>
+      <pre>free(ptr);</pre>
+      <p>where ptr is the pointer to the allocated memory.
+
+      After freeing a memory block, the pointer becomes invalid, and it is no longer pointing to a valid memory location.</p>
+      <h3>Example:</h3>
+      <pre>
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main() {
+          int *ptr = (int *)calloc(sizeof(int), 5);
+    
+          // Do some operations.....
+          for (int i = 0; i < 5; i++)
+            printf("%d ", ptr[i]);
+        
+            // Free the memory after completing
+            // operations
+           free(ptr);
+    
+         return 0;
+        }
+      </pre>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250305234252602298/Free-function-in-c.webp" alt="free">
+      <h3>*Realloc()</h3>
+      <p>realloc() function is used to resize a previously allocated memory block.
+         It allows you to change the size of an existing memory allocation without needing to free the old memory and allocate a new block.</p>
+      <h3>Syntax:</h3>
+      <pre>realloc(ptr, new_size);</pre>
+      <p>where, ptr is the pointer to the previously allocated memory block and new_size is the reallocated size that the memory block should have in bytes.
+
+      This function returns a pointer to the newly allocated memory, or NULL if the reallocation fails. If it fails, the original memory block remains unchanged.</p>
+      <h3>Example:</h3>
+      <pre>
+        #include <stdio.h>
+        #include <stdlib.h>
+
+        int main() {
+          int *ptr = (int *)malloc(5 * sizeof(int));
+
+          // Resize the memory block to hold 10 integers
+          ptr = (int *)realloc(ptr, 10 * sizeof(int));
+    
+          // Check for allocation failure
+          if (ptr == NULL) {
+           printf("Memory Reallocation Failed");
+           exit(0);
+          }
+
+          return 0;
+        }
+      </pre>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250305235104974360/realloc-function-in-c.webp" alt="realloc">
+  </div>
+  <div class="details" id="dynamic">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/">GeeksforGeeks</a></li>
+    </ul>
+
+  </div>
+  <div class="details" id="prepro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Preproccessor</h3>
+    <p>Preprocessors are programs that process the source code before the actual compilation begins.
+       They are not part of the compilation process but operate separately, allowing programmers to modify the code before compilation. 
+       It is the first step that the C source code goes through when being converted into an executable file.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230404112946/Compilation-Process-in-C.png" alt="preproces">
+
+  </div>
+  <div class="details" id="prepro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Preprocessor Directives</h3>
+    <p>The preprocessor directives are the instructions to the preprocessor for doing some tasks such as text substitutions, macro expansions, including header files,
+       and many more before compiling the code. All of these preprocessor directives begin with a ‘#’ hash symbol.
+
+      One of the most commonly used preprocessors is #include which is used to include the header files for different libraries in C programs.
+      C provides more directives for different functionalities.</p>
+    <h3>List of Preprocessor Directives</h3>
+    <p>The following table lists all the preprocessor directives in C:</p>
+    <ul>
+      <li>Define: Used to define a macro</li>
+      <li>undef: Used to undefine a macro </li>
+      <li>include: Used to include a file in the source code program</li>
+      <li>ifdef: Used to include a section of code if a certain macro is defined by #define</li>
+      <li>ifndef: Used to include a section of code if a certain macro is not defined by #define</li>
+      <li>if: Check for the specified condition</li>
+      <li>else: Alternate code that executes when #if fails</li>
+      <li>elif: Combines else and if for another condition check</li>
+      <li>endif: Used to mark the end of #if, #ifdef, and #ifndef</li>
+    </ul>
+  </div>
+   <div class="details" id="prepro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Macros</h3>
+    <p>Macros are used to define constants or create functions that are substituted by the preprocessor before the code is compiled.
+       The two preprocessors #define and #undef are used to create and remove macros in C.</p>
+    <pre>
+      #define token value
+      #undef token
+    </pre>
+    <p>where after preprocessing, the token will be expanded to its value in the program.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      // Macro Definition
+      #define LIMIT 5
+
+      int main(){
+        for (int i = 0; i < LIMIT; i++) {
+          printf("%d \n", i);
+        }
+      return 0;
+      }
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      0 
+      1 
+      2 
+      3 
+      4 
+    </pre>
+    <p>In the above program, before the compilation begins, the word LIMIT is replaced with 5.
+       The word 'LIMIT' in the macro definition is called a macro template and '5' is macro expansion.</p>
+
+  </div>
+  <div class="details" id="prepro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/cc-preprocessors/">GeeksforGeeks</a></li>
+    </ul>
+  </div>
+
+  <div class="details" id="error">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Error Handling</h3>
+    <p>In C programming, error handling is typically done using functions that handle runtime errors, 
+      returning error codes or messages to notify the programmer about the failure or incorrect operation. 
+      Since C does not provide built-in exception handling like other high-level languages (e.g., try-catch in Java or Python), error handling relies heavily on function return values, global variables, and system calls.
+
+    A lot of C function calls return -1 or NULL or set an in case of an error code as the global variable errno,
+     so quick tests on these values are easily done with an instance of ‘if statement’.</p>
+    <h3>What is errno?</h3>
+    <p>errno is a global variable defined in the <errno.h> header file that indicates the error that occurred during a function call in C. 
+      When a function fails, the errno variable is automatically set to a specific error code, which helps identify the type of error encountered. 
+      Different values of errno correspond to different types of errors, providing useful information for error handling in C programs.</p>
+    <h3> different errno values</h3>
+    <li>Operation not permitted</li>
+    <li>No such file or directory</li>
+    <li>No such process</li>
+    <li>Interrupted system call</li>
+    <li>I/O error</li>
+    <li>No such device or address</li>
+    <li>The argument list is too long</li>
+    <li>Exec format error</li>
+    <li>Bad file number</li>
+    <li>No child processes</li>
+    <li>Try again</li>
+    <li>Out of memory</li>
+    <li>Permission denied</li>
+    <h3>Example:</h3>
+    <pre>
+      #include <errno.h> 
+      #include <stdio.h> 
+
+      int main()  { 
+    
+	      // If a file is opened which does not exist, 
+	      // then it will be an error and corresponding 
+	      // errno value will be set 
+	      FILE* fp; 
+
+	      // opening a file which does not exist 
+	      fp = fopen("gfg.txt", "r"); 
+
+	      printf("Value of errno: %d\n", errno); 
+
+	     return 0; 
+      }
+    </pre>
+    <h3>Output:</h3>
+    <pre>Value of errno: 2</pre>
+  </div>
+  <div class="details" id="error">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Different Methods for Error Handling</h3>
+    <p>Different methods are used to handle different kinds of errors in C. Some of the commonly used methods are:</p>
+    <h3>1.Using if-else</h3>
+    <p>In C, error handling is done manually since there is no built-in try-catch block like in other programming languages. To manage errors,
+       we can use if-else statements to check for conditions and handle any potential errors that may occur during program execution.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <errno.h> 
+      #include <stdio.h> 
+
+      int main()  { 
+	      FILE* fp; 
+
+	      // opening a file which does not exist 
+	      fp = fopen("gfg.txt", "r");
+	
+	     if(fp == NULL){
+	         printf("File openning error");
+	      }else{
+	         printf("File open successfully");
+	      }
+	      return 0; 
+      }
+    </pre>
+    <h3>Output:</h3>
+    <pre>File openning error</pre>
+    <h3>2.perror()</h3>
+    <p>The perror() function is used to print an error message to the standard error stream (stderr). 
+      It helps to display the error string based on the global errno variable,
+       which stores the error code set by system calls and library functions.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <errno.h> 
+      #include <stdio.h> 
+      #include <string.h> 
+
+      int main(){ 
+       FILE* fp; 
+
+       // Try opening a non-existent file, which sets errno
+       fp = fopen("gfg.txt", "r"); 
+
+       // Print the errno value after failed file opening
+       printf("Value of errno: %d\n", errno); 
+       perror("Message from perror");
+
+      return 0; 
+    }
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      Value of errno: 2
+      Message from perror: No such file or directory
+    </pre>
+    <h3>3.strerror()</h3>
+    <p>The strerror() function is also used to show the error description. This function returns a pointer to the textual representation of the current errno value.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <errno.h>
+      #include <stdio.h>
+      #include <string.h>
+
+      int main() {
+        FILE* fp;
+
+        // Try opening a non-existent file, setting errno
+        fp = fopen("gfg.txt", "r");
+
+        // Print errno value and corresponding error message
+        printf("Value of errno: %d\n", errno);
+        printf("The error message is : %s", strerror(errno));
+
+      return 0;
+    }
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      Value of errno: 2
+      The error message is : No such file or directory
+    </pre>
+    <h3>3.ferror()</h3>
+    <p>The ferror() function is used to check if an error occurred during a file operation. It returns a non-zero value if there was an error during the file operation.</p>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+      int main() {
+        FILE *fptr = fopen("gfg.txt", "w");
+
+       // Write data to the file
+       fprintf(fptr, "Hello, GFG!");
+    
+  	   // Check error after writing data into file
+       if(ferror(fptr)==0)
+            printf("Data written successfully.");
+       fclose(fptr);
+      return 0;
+    }
+    </pre>
+    <h3>Output:</h3>
+    <pre>Data written successfully.</pre>
+  </div>
+  <div class="details" id="error">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c/error-handling-in-c/">GeeksforGeeks</a></li>
+    </ul>
+  </div>
+  <div class="details" id="error">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Debugging Techniques</h3>
+    <p>Debugging is the process of finding and fixing errors (bugs) in your program.
+
+    Bugs are mistakes that make your program crash, behave incorrectly, or give the wrong output.</p>
+    <p>Before you start debugging, make sure your code is clean and organized:</p>
+    <ul>
+      <li>Use proper indentation to keep the structure clear.</li>
+      <li>Give your variables clear, meaningful names that describe what they store.</li>
+    </ul>
+    <p>Clean code is easier to read - and easier to debug!
+
+    In the sections below, we'll introduce several common debugging techniques.</p>
+    <h3>1.Print debugging</h3>
+    <p>Use printf() to print values at different points in your code to see what's going wrong:</p>
+    <pre>
+      int x = 10;
+      int y = 0;
+      printf("Before division\n"); // Debug output
+      int z = x / y; // Crashes (division by zero)
+      printf("After division\n"); // Never runsint x = 10;
+      int y = 0;
+      printf("Before division\n"); // Debug output
+      int z = x / y; // Crashes (division by zero)
+      printf("After division\n"); // Never runs
+    </pre>
+    <p>If you don't see "After division", the program crashed at x / y.</p>
+    <h3>2.Check Variable Values</h3>
+    <p>Print variables to see if they are what you expect:</p>
+    <pre>
+      int x = 10;
+      int y = 5;
+      int result = x - y;
+
+      printf("Result: %d\n", result); // Result: 5
+    </pre>
+    <p>Expected 15? That means the logic is wrong: try using x + y instead.</p>
+    <h3>3.Use a Debugger Tool</h3>
+    <p>IDEs like Visual Studio, Code::Blocks, and VS Code have built-in debuggers that work with C. These tools let you:</p>
+    <ul>
+      <li>Pause your program using breakpoints</li>
+      <li>Step through your code line by line</li>
+      <li>Watch variables and see unexpected values as they change</li>
+    </ul>
+    
+  </div>
+
 
   <script src="script.js"></script>
 
