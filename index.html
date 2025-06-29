@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>C Language Roadmap</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <h2 id="main-title">C Programming Language Roadmap</h2>
@@ -14,8 +16,9 @@
   <div class="container" id="roadmap">
     <div class="box" onclick="showDetails('intro')">Introduction to C and its History</div>
     <div class="box" onclick="showDetails('env')">Setting up the C Development Environment</div>
-    <div class="box" onclick="showDetails('syntax')">Basic Syntax and Structure of a C Program</div>
-    <div class="box" onclick="showDetails('types')">Data Types, Variables, and Constants</div>
+    <div class="box" onclick="showDetails('input-output')">Basic input an output </div>
+    <div class="box" onclick="showDetails('token-keywords')">token-keywords </div>
+    <div class="box" onclick="showDetails('types')">Data Types</div>
     <div class="box" onclick="showDetails('control')">Control Flow</div>
     <div class="box" onclick="showDetails('functions')">Functions</div>
     <div class="box" onclick="showDetails('arrays')">Arrays and Strings</div>
@@ -23,52 +26,611 @@
 
   <div class="details" id="intro">
     <button class="close-btn" onclick="hideAll()">× Close</button>
-    <h3>Introduction to C  </h3>
-    <p>C was developed in 1972 by Dennis Ritchie. It's the foundation of many modern programming languages like C++, Java, and Python. It is widely used in systems programming and embedded development.</p>
+    <h3>Introduction to C </h3>
+    <p>C is a general-purpose procedural programming language initially developed by Dennis Ritchie in 1972 at Bell
+      Laboratories of AT&T Labs. It was mainly created as a system programming language to write the UNIX operating
+      system.</p>
+    <img src="Features-Of-C-language.webp" alt="" align="center">
+    <p>Why Learn C?
+      C is considered mother of all programming languages as many later languages have borrowed syntax/features directly
+      or indirectly from the C language like the syntax of Java, PHP, JavaScript, and many other languages that are
+      mainly based on the C language.
+
+      So, if a person learns C programming first, it will help them to learn any modern programming language as well
+      provide a deeper understanding of the fundamentals of programming and underlying architecture of the operating
+      system like pointers, working with memory locations etc.</p>
+
+  </div>
+  <div class="details" id="intro">
+    <pre><h3>Hello World Program in C</h3>
+      #include <stdio.h>
+int main(void)
+{
+    // This prints "Hello World"
+    printf("Hello World");
+    return 0;  
+}
+    </pre>
+    <output>
+      Hello World
+    </output>
+
   </div>
   <div class="details" id="intro">
     <button class="close-btn" onclick="hideAll()">× Close</button>
-    <h3>History of C</h3>
-    <p>C evolved from B language and was influenced by BCPL. It became standardized in 1989 (ANSI C) and later in 1999 (C99). The latest standard is C11.</p>
+    <h3>Features of C</h3>
+    <ul>
+      <li>Simple and easy to learn</li>
+      <li>Structured programming language</li>
+      <li>Low-level access to memory</li>
+      <li>Rich set of built-in operators</li>
+      <li>Portability across platforms</li>
+      <li>Extensive use in system programming</li>
+      <li>Supports recursion and pointers</li>
+  </div>
+  <div class="details" id="intro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Applications of C</h3>
+    <ul>
+      <li>Operating Systems (e.g., UNIX, Linux)</li>
+      <li>Embedded Systems</li>
+      <li>Compilers and Interpreters</li>
+      <li>Database Management Systems</li>
+      <li>Game Development</li>
+      <li>Network Programming</li>
+      <li>Scientific Computing</li>
+    </ul>
+
+  </div>
+  <div class="details" id="intro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Structure of C</h3>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250227185831242787/structure-of-c-program.webp"
+      alt="Structure of C Program" align="center">
+
   </div>
 
   <div class="details" id="env">
     <button class="close-btn" onclick="hideAll()">× Close</button>
     <h3>Setting up the C Development Environment</h3>
-    <p>You can use compilers like GCC or Clang. IDEs like Code::Blocks, VS Code, or Dev-C++ make coding easier. Setup includes installing a compiler and configuring your editor.</p>
+    <pre>
+1. Install a C Compiler:
+    - For Windows: Use MinGW or TDM-GCC.
+    - For macOS: Use Xcode Command Line Tools.
+    - For Linux: GCC is usually pre-installed or can be installed via package manager.
+
+
+
+2. Choose an IDE or Text Editor:
+    - IDEs: Code::Blocks, Dev-C++, CLion, Visual Studio.
+    - Text Editors: Visual Studio Code, Sublime Text, Atom, or even Notepad++.
+      
+    - For Visual Studio Code, install the C/C++ extension for better support.
+      <a href="https://code.visualstudio.com/docs/languages/cpp"><h4> Visual Studio code</h4></a>
+
+    -for online coding, you can use platforms like Replit, CodeChef IDE, or Paiza.IO.
+      <a href="https://paiza.io/en/projects/new?language=c"><h4>Paiza.IO</h4></a>
+      <a href="https://replit.com/languages/c"><h4>Replit</h4></a>
+      <a href="https://www.codechef.com/ide"><h4>CodeChef IDE</h4></a>
+
+3. Write Your First C Program:
+    - Open your IDE or text editor.
+    - Create a new file with a `.c` extension.
+    - Write a simple C program, e.g.:
+      ```c
+
+      #include <stdio.h>
+      int main() {
+          printf("Hello, World!\n");
+          return 0;
+      }
+      ```
+
+
+4. Compile and Run:
+    - If using an IDE, there will typically be a "Run" button.
+    - If using a terminal, navigate to the directory where your file is saved and run:
+      ```
+      gcc -o hello hello.c
+      ./hello
+      ```
+      
+
+    </pre>
   </div>
 
-  <div class="details" id="syntax">
+  <div class="details" id="input-output">
     <button class="close-btn" onclick="hideAll()">× Close</button>
-    <h3>Basic Syntax and Structure of a C Program</h3>
-    <p>C programs start with #include directives followed by the main() function. Curly braces define blocks of code. Semicolons end statements.</p>
+    <h3>Basic Input and Output</h3>
+    <h4>
+      basic output in C
+    </h4>
+    <p>
+      In C, there are many functions used for output in different situations, but the most commonly used function for
+      output is printf().
+
+      The printf() function is used to print formatted output to the standard output stdout (which is generally the
+      console screen). It is one of the most commonly used functions in C.
+    </p>
+    <h4>syntax of printf() function: printf("formatted_string", variables/values);</h4>
+    <pre>
+      #include <stdio.h>
+      int main() {
+          printf("Hello, World!\n");
+          return 0;
+      }
+    </pre>
+    <h4>Basic Input in C</h4>
+    <p>
+      These functions provide ways to read data from the user and use it in the programs . Among the most commonly used
+      input functions are scanf() for reading formatted data and getchar() for reading a single character.
+
+      scanf() is used to read user input from the console. It takes the format string and the addresses of the variables
+      where the input will be stored.
+    </p>
+    <h4>syntax of scanf() function: scanf("format_string", &variable);</h4>
+    <pre>
+      #include <stdio.h>
+
+int main() {
+    int age;
+    printf("Enter your age: ");
+  
+    // Reads an integer
+    scanf("%d", &age);  
+  
+    // Prints the age
+    printf("Age is: %d\n", age);  
+    return 0;
+}
+    </pre>
   </div>
+  <div class="details" id="token-keywords">
+    <h1>Token and Keywords</h1>
+    <h1>Token</h1>
+    <p>
+      In C programming, tokens are the smallest units in a program that have meaningful representations. Tokens are the
+      building blocks of a C program, and they are recognized by the C compiler to form valid expressions and
+      statements. Tokens can be classified into various categories, each with specific roles in the program.
+    </p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20241224114151560126/Tokens-in-C.webp" alt="token-img">
+    <h1>Keywords</h1>
+    <p>
+      In C Programming language, there are many rules so to avoid different types of errors. One of such rule is not
+      able to declare variable names with auto, long, etc. This is all because these are keywords. Let us check all
+      keywords in C language.
+    </p>
+    <h3>Some keywords</h3>
+    <ul>
+      <li>auto</li>
+      <li>break</li>
+      <li>case</li>
+      <li>char</li>
+      <li>const</li>
+      <li>continue</li>
+      <li>default</li>
+      <li>do</li>
+      <li>double</li>
+      <li>else</li>
+      <li>enum</li>
+      <li>extern</li>
+      <li>float</li>
+      <li>for</li>
+      <li>goto</li>
+      <li>if</li>
+      <li>int</li>
+      <li>long</li>
+      <li>register</li>
+      <li>return</li>
+      <li>schar</li>
+      <li>short</li>
+      <li>sine</li>
+      <li>sizeof</li>
+      <li>static</li>
+      <li>struct</li>
+      <li>switch</li>
+      <li>typedef</li>
+      <li>union</li>
+      <li>unsigned</li>
+      <li>void</li>
+    </ul>
+    <h2>For further refrences</h2>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c-keywords/">GeeksforGeeks</a></li>
+      <li><a href="https://www.programiz.com/c-programming/c-keywords">Programiz</a></li>
+      <li><a href="https://www.javatpoint.com/c-keywords">JavaTpoint</a></li>
+    </ul>
+  </div>
+
 
   <div class="details" id="types">
     <button class="close-btn" onclick="hideAll()">× Close</button>
-    <h3>Data Types, Variables, and Constants</h3>
-    <p>C supports int, float, char, double etc. Constants can be defined using const or #define. Variables must be declared before use.</p>
+    <h3>Data Types</h3>
+    <p>Defination : The data type specifies the size and type of information the variable will store.</p>
+    <ul>
+      <li>int</li>
+      <li>float</li>
+      <li>double</li>
+      <li>char</li>
+      <li>String</li>
+
+    </ul>
+    <h3>int</h3>
+    <p>int is a data type that is used to store integer values. It can store both positive and negative whole numbers.
+      The size of an int is typically 4 bytes (32 bits) on most systems.</p>
+    <h3>float</h3>
+    <p>float is a data type that is used to store single-precision floating-point
+      numbers. It can store decimal values with a limited precision. The size of a float is typically 4 bytes (32
+      bits).</p>
+    <h3>double</h3>
+    <p>double is a data type that is used to store double-precision floating-point
+      numbers. It can store decimal values with higher precision than float. The size of a double is typically 8 bytes
+      (64 bits).</p>
+    <h3>char</h3>
+    <p>char is a data type that is used to store single characters. It can store any character from the ASCII
+      character set. The size of a char is typically 1 byte (8 bits).</p>
+    <h3>Strings</h3>
+    <p>string is collections of characters and sequnces and it should be enclosed by double ot single qoute ("",'') </p>
+    <h3>Example</h3>
+    <pre>
+
+      #include <stdio.h>
+          int main() {
+              int age = 25; // Integer data type
+              float height = 5.9; // Float data type
+              double salary = 50000.50; // Double data type
+              char grade = 'A'; // Character data type
+              string name="saarika and Groups"; // string data type
+
+              printf("Age: %d\n", age);
+              printf("Height: %.1f\n", height);
+              printf("Salary: %.2lf\n", salary);
+              printf("Grade: %c\n", grade);
+              printf("Name: %s\n", name);
+
+              return 0;
+          }
+    </pre>
+    <h3>Output</h3>
+    <pre>
+      Age: 25
+      Height: 5.9
+      Salary: 50000.50
+      Grade: A
+      Name:saarika and Groups
+      </pre>
+
+  </div>
+  <div class="details" id="types">
+    <h3>Formate Specifier </h3>
+    <p>%d or %i is used for int data type </p>
+    <p>%f or %F is used for float data type </p>
+    <p> %lf is used for diuble data type</p>
+    <p> %c is used for char data types </p>
+    <p> %s is used for string data types</p>
+
   </div>
 
   <div class="details" id="control">
     <button class="close-btn" onclick="hideAll()">× Close</button>
     <h3>Control Flow</h3>
-    <p>Control structures include if, else, switch, for, while, and do-while. They help manage the logic and decision-making in programs.</p>
+    <p>In C programming, control flow statements are used to control the order in which instructions are executed in a
+      program. These statements let the program make decisions, repeat tasks, and jump to specific parts of the code
+      based on certain conditions.
+    </p>
+    <h3>Types of Control Flow Statements in C:
+    </h3>
+    <ul>
+      <li>Decision-Making Statements
+      </li>
+      <li>Looping Statements
+      </li>
+      <li> Jump Statements
+      </li>
+
+    </ul>
   </div>
+  <div class="details" id="control">
+    <h3>Decision-Making Statements</h3>
+
+    <h3>if statement</h3>
+    <p>The if statement allows the program to execute a block of code only if a specified condition evaluates to true.
+      It is used to make decisions and control the flow based on conditions.
+    </p>
+    <pre>
+      syntax:
+              if (condition) {
+                    // code to execute if condition is true
+                }
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113160249557892/if_statement.webp"
+      alt="if-flowchart">
+    <h3>if-else statement</h3>
+    <p>If the if condition is false, the else if condition is evaluated. If true, the corresponding code block is
+      executed, and the remaining else if and else blocks are skipped</p>
+    <pre>
+      syntax:
+                if (condition) {
+                    // code if condition is true
+                } else {
+                    // code if condition is false
+                  }
+
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113160300557893/if_else_statement.webp"
+      alt="if-else-flowchart">
+    <h3>else-if-ladder</h3>
+    <p>An else if ladder, also known as an if-else if-else statement, is a programming construct used to check multiple
+      conditions sequentially. It allows a program to execute different blocks of code based on which condition is true,
+      with a final else block to handle the case where none of the conditions are met.
+    </p>
+    <pre>
+      syntax:
+          if (condition1) {
+                // code
+          } else if (condition2) {
+              // code
+          } else {
+              // default code
+          }
+</pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113160311557894/else_if_ladder.webp"
+      alt="else-if-flowchart">
+    <h3>Nested if </h3>
+    <p>A nested if statement is an if statement placed inside another if or else statement. This allows for more complex
+      decision-making logic by evaluating multiple conditions in a hierarchical manner. Essentially, the inner if or
+      else block is only executed if the outer if condition is true. </p>
+    <pre>
+      if(condition){
+        if(condition){
+          //if its true
+        }else{
+          //if its false 
+        }
+      }else if(condition){
+        //statements
+      }else{
+        //statement
+      }
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113160311557894/nested_if_statement.webp"
+      alt="nested-if-flowchart">
+    <h3>switch statement</h3>
+    <p>
+      The switch statement selects one block of code to execute from multiple options, based on the value of an
+      expression. It is useful when you have many possible values to check.
+
+    </p>
+    <pre>
+      switch (expression) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    default:
+        // code
+}
+
+
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113161944104495/switch_statement.webp"
+      alt="switch-flowchart">
+    <h3>Example of Decision-Making Statements</h3>
+    <pre>
+#include <stdio.h>
+
+int main() {
+    int number, i;
+
+    // if-else example
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    if (number > 0)
+        printf("The number is positive.\n");
+    else if (number < 0)
+        printf("The number is negative.\n");
+    else
+        printf("The number is zero.\n");
+
+    // switch statement example
+    printf("\nChoose a day (1-3): ");
+    scanf("%d", &number);
+    switch (number) {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        case 3:
+            printf("Wednesday\n");
+            break;
+        default:
+            printf("Invalid choice.\n");
+    }
+
+      </pre>
+  </div>
+  <div class="details" id="control">
+    <h3>Looping Statements</h3>
+    <p>Looping statements allow you to execute a block of code repeatedly based on a condition. C provides several types
+      of loops:</p>
+    <ul>
+      <li>for loop</li>
+      <li>while loop</li>
+      <li>do-while loop</li>
+    </ul>
+    <h3>for loop</h3>
+    <p>The for loop repeats a block of code a specific number of times, based on an initialization, a condition, and an
+      increment/decrement expression.
+    </p>
+    <pre>
+      syntax:
+      for (initialization; condition; increment/decrement) {
+          // code to be executed
+      }
+    </pre>
+    <pre>
+    #include <stdio.h>
+    int main()
+    {
+
+        int i;
+        // for loop example
+        for (i = 1; i <= 5; i++) {
+            printf("Iteration %d\n", i);
+        }
+        return 0;
+    }
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230627104742/C-for-Loop.png" alt="for-flowchart ">
+
+    <h3>while loop</h3>
+    <p>The while loop repeatedly executes a block of code as long as the specified condition remains true. The condition
+      is checked before each iteration.
+
+    </p>
+    <pre>
+      syntax:
+      while (condition) {
+          // code to be executed
+      }
+    </pre>
+    <pre>
+      Example Program
+      #include <stdio.h>
+        int main() {
+            int i = 1;
+            // while loop example
+            while (i <= 5) {
+                printf("Iteration %d\n", i);
+                i++;
+            }
+            return 0;
+        }
+      
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220927171802/WhileloopinC2.png"
+      alt="while-flowchart ">
+    <h3>do-while loop</h3>
+    <p>Executes the block at least once, then checks the condition.
+    </p>
+    <pre>
+      syntax:
+      do {
+          // code to be executed
+      } while (condition);
+    </pre>
+    <pre>
+      Example Program
+      #include <stdio.h>
+        int main() {
+            int i = 1;
+            // do-while loop example
+            do {
+                printf("Iteration %d\n", i);
+                i++;
+            } while (i <= 5);
+            return 0;
+        }
+      </pre>
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250321150401929348/dowhileloopinc.png" alt="do-while-flowchart">
+      
+  </div>
+  <div class="details" id="control">
+    <h3>Jump Statements</h3>
+    <p>Jump statements allow you to alter the flow of control in a program. C provides several jump statements:</p>
+    <ul>
+      <li>break</li>
+      <li>continue</li>
+      <li>goto</li>
+      <li>return</li>
+    </ul>
+    <h3>break statement</h3>
+    <p>The break statement is used to exit from a loop or switch statement prematurely.</p>
+    <pre>
+      Example Program
+      #include <stdio.h>
+        int main() {
+            for (int i = 1; i <= 10; i++) {
+                if (i == 5) {
+                    break; // Exit the loop when i is 5
+                }
+                printf("%d ", i);
+            }
+            return 0;
+        }
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230307180351/flowchart-of-break-in-c.png"
+      alt="flowchart-of-break-in-c">
+
+    <h3>continue statement</h3>
+    <p>The continue statement skips the current iteration of a loop and proceeds to the next iteration.</p>
+    <pre>
+      Example Program
+      #include <stdio.h>
+        int main() {
+            for (int i = 1; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    continue; // Skip even numbers
+                }
+                printf("%d ", i);
+            }
+            return 0;
+        }
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230606114014/continue-in-c.png"
+      alt="flowchart-of-continue">
+    <h3>goto statement</h3>
+    <p>The goto statement allows you to jump to a specific label in the code. It is generally discouraged due to its
+      potential to create unstructured code.</p>
+    <pre>
+      Example Program
+      #include <stdio.h>
+        int main() {
+            int i = 1;
+            start: // Label
+            if (i <= 5) {
+                printf("%d ", i);
+                i++;
+                goto start; // Jump back to the label
+            }
+            return 0;
+        }
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/goto.png" alt="flowchart-of-goto">
+
+    <h3>return statement</h3>
+    <p>The return statement is used to exit from a function and optionally return a value.</p>
+    <pre>
+      Example Program
+      #include <stdio.h>
+        int add(int a, int b) {
+            return a + b; // Return the sum of a
+
+  </div>
+
 
   <div class="details" id="functions">
     <button class="close-btn" onclick="hideAll()">× Close</button>
     <h3>Functions</h3>
-    <p>Functions allow code reuse. C supports function declaration, definition, and recursion. The main function is the entry point of any program.</p>
+    <p>Functions allow code reuse. C supports function declaration, definition, and recursion. The main function is
+      the
+      entry point of any program.</p>
   </div>
 
   <div class="details" id="arrays">
     <button class="close-btn" onclick="hideAll()">× Close</button>
     <h3>Arrays and Strings</h3>
-    <p>Arrays are collections of similar data types. Strings are character arrays ending with a null terminator '\\0'. They are essential for managing data collections.</p>
+    <p>Arrays are collections of similar data types. Strings are character arrays ending with a null terminator '\\0'.
+      They are essential for managing data collections.</p>
   </div>
 
   <script src="script.js"></script>
 
 </body>
+
 </html>
