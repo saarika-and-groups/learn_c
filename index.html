@@ -21,7 +21,7 @@
     <div class="box" onclick="showDetails('types')">Data Types</div>
     <div class="box" onclick="showDetails('control')">Control Flow</div>
     <div class="box" onclick="showDetails('functions')">Functions</div>
-    <div class="box" onclick="showDetails('arrays')">Arrays and Strings</div>
+    <div class="box" onclick="showDetails('arrays')">Arrays</div>
   </div>
 
   <div class="details" id="intro">
@@ -42,6 +42,8 @@
 
   </div>
   <div class="details" id="intro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+
     <pre><h3>Hello World Program in C</h3>
       #include <stdio.h>
 int main(void)
@@ -186,6 +188,8 @@ int main() {
     </pre>
   </div>
   <div class="details" id="token-keywords">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+
     <h1>Token and Keywords</h1>
     <h1>Token</h1>
     <p>
@@ -302,6 +306,8 @@ int main() {
 
   </div>
   <div class="details" id="types">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+
     <h3>Formate Specifier </h3>
     <p>%d or %i is used for int data type </p>
     <p>%f or %F is used for float data type </p>
@@ -331,6 +337,8 @@ int main() {
     </ul>
   </div>
   <div class="details" id="control">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+
     <h3>Decision-Making Statements</h3>
 
     <h3>if statement</h3>
@@ -357,7 +365,7 @@ int main() {
                   }
 
     </pre>
-    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113160300557893/if_else_statement.webp"
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230220123250/flowchart_of_if_else_in_c.png"
       alt="if-else-flowchart">
     <h3>else-if-ladder</h3>
     <p>An else if ladder, also known as an if-else if-else statement, is a programming construct used to check multiple
@@ -374,7 +382,7 @@ int main() {
               // default code
           }
 </pre>
-    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113160311557894/else_if_ladder.webp"
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250102013047119893/if-else-if-ladder-flow-chart.webp"
       alt="else-if-flowchart">
     <h3>Nested if </h3>
     <p>A nested if statement is an if statement placed inside another if or else statement. This allows for more complex
@@ -393,7 +401,7 @@ int main() {
         //statement
       }
     </pre>
-    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250113160311557894/nested_if_statement.webp"
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240710162241/flowchart-of-nested-if-else-in-c.webp"
       alt="nested-if-flowchart">
     <h3>switch statement</h3>
     <p>
@@ -455,6 +463,8 @@ int main() {
       </pre>
   </div>
   <div class="details" id="control">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+
     <h3>Looping Statements</h3>
     <p>Looping statements allow you to execute a block of code repeatedly based on a condition. C provides several types
       of loops:</p>
@@ -537,10 +547,13 @@ int main() {
             return 0;
         }
       </pre>
-  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250321150401929348/dowhileloopinc.png" alt="do-while-flowchart">
-      
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250321150401929348/dowhileloopinc.png"
+      alt="do-while-flowchart">
+
   </div>
   <div class="details" id="control">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+
     <h3>Jump Statements</h3>
     <p>Jump statements allow you to alter the flow of control in a program. C provides several jump statements:</p>
     <ul>
@@ -617,16 +630,365 @@ int main() {
   <div class="details" id="functions">
     <button class="close-btn" onclick="hideAll()">× Close</button>
     <h3>Functions</h3>
-    <p>Functions allow code reuse. C supports function declaration, definition, and recursion. The main function is
-      the
-      entry point of any program.</p>
+
+    <p>A function definition informs the compiler about the function's name, its return type, and what it does. It is compulsory to define a function before it can be called..</p>
+    <pre>
+      return_type name () {
+    // Body of function
+          };
+    </pre>
+    <ul>
+      <li>return_type: type of value the function return.</li>
+      <li>name: name of the function.</li>
+      <li>(): parentheses that may contain parameters.</li>
+      <li>Body of function: code that defines what the function does.</li>
+
+
+    </ul>
+  </div>
+  <div class="details" id="functions">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Function Definition</h3>
+    <p>A function definition provides the actual body of the function, where the logic is implemented. It includes the
+      return type, function name, parameters (if any), and the code block that defines what the function does.</p>
+    <pre>
+        Example Program
+        #include <stdio.h>
+
+        // Function definition
+        void hello() {
+            printf("Hello, World!\n");
+        }
+
+        int main() {
+            hello(); // Function call
+            return 0;
+        }
+      </pre>
+    <h3>Output</h3>
+    <pre>
+        Hello, World!
+      </pre>
+  </div>
+  <div class="details" id="functions">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+
+    <h3>Function Declaration</h3>
+    <p>After defining a function, you can use it anywhere in the program by simply calling it with its name followed
+      by
+      parentheses ().</p>
+    <p>A function declaration, also known as a function prototype, informs the compiler about the function's name,
+      return type, and parameters (if any) without providing the actual body of the function. It is typically placed
+      before the main function or in a header file.</p>
+    <pre>
+        Example Program
+        #include <stdio.h>
+
+        // Function declaration
+        void hello();
+
+        int main() {
+            hello(); // Function call
+            return 0;
+        }
+
+        // Function definition
+        void hello() {
+            printf("Hello, World!\n");
+        }
+      </pre>
+    <h3>Output</h3>
+    <pre>
+        Hello, World!
+      </pre>
+
+  </div>
+
+
+
+  <div class="details" id="functions">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Function Parameters</h3>
+    <p>Functions can accept parameters, which are values passed to the function when it is called. Parameters allow
+      functions to operate on different data without changing their code.</p>
+    <pre>
+        Example Program
+        #include <stdio.h>
+
+        // Function declaration with parameters
+        void greet(char name[]);
+
+        int main() {
+            greet("Saarika"); // Function call with argument
+            return 0;
+        }
+
+        // Function definition with parameters
+        void greet(char name[]) {
+            printf("Hello, %s!\n", name);
+        }
+      </pre>
+    <h3>Output</h3>
+    <pre>
+        Hello, Saarika
+      </pre>
+  </div>
+  <div class="details" id="functions">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Function Return Values</h3>
+    <p>Functions can return values to the caller. The return type of the function specifies the type of value it will
+      return. If a function does not return a value, its return type is void.</p>
+    <pre>
+        Example Program
+        #include <stdio.h>
+
+        // Function declaration with return type
+        int add(int a, int b);
+
+        int main() {
+            int result = add(5, 3); // Function call with arguments
+            printf("Sum: %d\n", result);
+            return 0;
+        }
+
+        // Function definition with return type
+        int add(int a, int b) {
+            return a + b; // Return the sum
+        }
+      </pre>
+    <h3>Output</h3>
+    <pre>
+        Sum: 8
+      </pre>
+  </div>
+
+
+  <div class="details" id="functions">
+
+
+    <p>For further Details visit <a href="https://www.geeksforgeeks.org/c/c-functions/"> geeksforgeeks</a></p>
+
   </div>
 
   <div class="details" id="arrays">
     <button class="close-btn" onclick="hideAll()">× Close</button>
-    <h3>Arrays and Strings</h3>
-    <p>Arrays are collections of similar data types. Strings are character arrays ending with a null terminator '\\0'.
-      They are essential for managing data collections.</p>
+    <h3>Arrays </h3>
+    <p>An array is a collection of elements of the same data type, stored in contiguous memory locations. It allows
+      you to store multiple values in a single variable, making it easier to manage and manipulate related data.</p>
+    <p>Arrays are useful when you need to work with a fixed-size collection of elements, such as a list of numbers,
+      characters, or any other data type. They provide a way to group related data together and access individual
+      elements using an index.</p>
+    <h3>Types of Array</h3>
+    <ul>
+      <li>Single-Dimensional Array</li>
+      <li>Multi-Dimensional Array</li>
+      <li>Dynamic Array</li>
+    </ul>
+  </div>
+  <div class="details" id="arrays">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Single-Dimensional Array</h3>
+    <p>A single-dimensional array is a linear collection of elements, where each element can be accessed using a single
+      index. It is the simplest form of an array and is often used to store a list of related values.</p>
+    <h3>Declaration of Single-Dimensional Array</h3>
+    <pre>
+      data_type array_name[size];
+    </pre>
+    <h3>Example of Single-Dimensional Array Declaration</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+
+      int main() {
+          int numbers[5]; // Declaration of an integer array with 5 elements
+          return 0;
+      }
+    </pre>
+    <h3>Initialization of Single-Dimensional Array</h3>
+    <p>You can initialize a single-dimensional array at the time of declaration by providing values in curly braces.</p>
+    <pre>
+      data_type array_name[size] = {value1, value2, ...};
+    </pre>
+    <h3>Example of Single-Dimensional Array Initialization</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+
+      int main() {
+          int numbers[5] = {1, 2, 3, 4, 5}; // Initialization of an integer array with 5 elements
+          return 0;
+      }
+    </pre>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250527113657849446/Arrays-in-C.webp"
+      alt="arrays-in-c">
+    <h3>Accessing Single-Dimensional Array Elements</h3>
+    <p>You can access individual elements of a single-dimensional array using an index, which starts from 0.</p>
+    <pre>
+      array_name[index];
+    </pre>
+    <h3>Example of Accessing Single-Dimensional Array Elements</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+
+      int main() {
+          int numbers[5] = {1, 2, 3, 4, 5};
+          printf("Element at index 0: %d\n", numbers[0]); // Accessing element at index 0
+          return 0;
+      }
+    </pre>
+  </div>
+  <div class="details" id="arrays">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Two-Dimensional Array or Multi-Dimensional Array</h3>
+    <p>A multi-dimensional array is an array of arrays, allowing you to create a grid-like structure. The most common
+      type is a two-dimensional array, which can be visualized as a table with rows and columns.</p>
+    <h3>Declaration of Multi-Dimensional Array</h3>
+    <pre>
+      data_type array_name[size1][size2];
+    </pre>
+    <h3>Example of Multi-Dimensional Array Declaration</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+
+      int main() {
+          int matrix[3][3]; // Declaration of a 3x3 integer matrix
+          return 0;
+      }
+    </pre>
+    <h3>Initialization of Multi-Dimensional Array</h3>
+    <p>You can initialize a multi-dimensional array at the time of declaration by providing nested curly braces.</p>
+    <pre>
+      data_type array_name[size1][size2] = {{value11, value12, ...}, {value21, value22, ...}, ...};
+    </pre>
+    <h3>Example of Multi-Dimensional Array Initialization</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+
+      int main() {
+          int matrix[2][2] = {{1, 2}, {3, 4}}; // Initialization of a 2x2 integer matrix
+          return 0;
+      }
+    </pre>
+    <h3>Accessing Multi-Dimensional Array Elements</h3>
+    <p>You can access individual elements of a multi-dimensional array using two indices: one for the row and one for
+      the column.</p>
+    <pre>
+      array_name[row_index][column_index];
+    </pre>
+    <h3>Example of Accessing Multi-Dimensional Array Elements</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+
+      int main() {
+          int matrix[2][2] = {{1, 2}, {3, 4}};
+          printf("Element at (0, 0): %d\n", matrix[0][0]); // Accessing element at row 0, column
+          printf("Element at (1, 1): %d\n", matrix[1][1]); // Accessing element at row 1, column 1
+          return 0;
+      }
+    </pre>
+    <h3>Output</h3>
+    <pre>
+      Element at (0, 0): 1
+      Element at (1, 1): 4
+    </pre>
+
+
+  </div>
+  <div class="details" id="arrays">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Dynamic Array</h3>
+    <p>A dynamic array is an array whose size can be determined at runtime. It allows you to create arrays with a size
+      that is not known at compile time. Dynamic arrays are typically implemented using pointers and memory allocation
+      functions.</p>
+    <h3>Declaration of Dynamic Array</h3>
+    <pre>
+      data_type *array_name;
+    </pre>
+    <h3>Example of Dynamic Array Declaration</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main() {
+          int *dynamicArray; // Declaration of a pointer for dynamic array
+          return 0;
+      }
+    </pre>
+    <h3>Memory Allocation for Dynamic Array</h3>
+    <p>You can allocate memory for a dynamic array using the malloc() function from the stdlib.h library.</p>
+    <pre>
+      dynamicArray = (data_type *)malloc(size * sizeof(data_type));
+    </pre>
+    <h3>Example of Memory Allocation for Dynamic Array</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main() {
+          int *dynamicArray;
+          int size = 5;
+          dynamicArray = (int *)malloc(size * sizeof(int)); // Allocating memory for a dynamic array of integers
+          return 0;
+      }
+    </pre>
+    <h3>Accessing Dynamic Array Elements</h3>
+    <p>You can access individual elements of a dynamic array using an index, just like with regular arrays.</p>
+    <pre>
+      dynamicArray[index];
+    </pre>
+    <h3>Example of Accessing Dynamic Array Elements</h3>
+    <pre>
+      Example Program
+      #include <stdio.h>
+      #include <stdlib.h>
+
+      int main() {
+          int *dynamicArray;
+          int size = 5;
+          dynamicArray = (int *)malloc(size * sizeof(int)); // Allocating memory for a dynamic array of integers
+
+          // Initializing the dynamic array
+          for (int i = 0; i < size; i++) {
+              dynamicArray[i] = i + 1; // Assigning values to the array
+          }
+
+          // Accessing and printing the elements of the dynamic array
+          for (int i = 0; i < size; i++) {
+              printf("Element at index %d: %d\n", i, dynamicArray[i]);
+          }
+
+          free(dynamicArray); // Freeing the allocated memory
+          return 0;
+      }
+    </pre>
+    <h3>Output</h3>
+    <pre>
+      Element at index 0: 1
+      Element at index 1: 2
+      Element at index 2: 3
+      Element at index 3: 4
+      Element at index 4: 5
+    </pre>
+    <p>In this example, we declared a dynamic array, allocated memory for it, initialized its elements, accessed and
+      printed the elements, and finally freed the allocated memory using the free() function.</p>
+
+
+  </div>
+  <div class="details" id="arrays">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>For further Details visit</h3>
+    <ul>
+      <li><a href="https://www.geeksforgeeks.org/c-arrays/">GeeksforGeeks</a></li>
+      <li><a href="https://www.programiz.com/c-programming/c-arrays">Programiz</a></li>
+      <li><a href="https://www.javatpoint.com/c-arrays">JavaTpoint</a></li>
+    </ul>
+
   </div>
 
   <script src="script.js"></script>
