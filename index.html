@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C Language Roadmap</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2 id="main-title">C Programming Language Roadmap</h2>
+
+  <div class="container" id="roadmap">
+    <div class="box" onclick="showDetails('intro')">Introduction to C and its History</div>
+    <div class="box" onclick="showDetails('env')">Setting up the C Development Environment</div>
+    <div class="box" onclick="showDetails('syntax')">Basic Syntax and Structure of a C Program</div>
+    <div class="box" onclick="showDetails('types')">Data Types, Variables, and Constants</div>
+    <div class="box" onclick="showDetails('control')">Control Flow</div>
+    <div class="box" onclick="showDetails('functions')">Functions</div>
+    <div class="box" onclick="showDetails('arrays')">Arrays and Strings</div>
+  </div>
+
+  <div class="details" id="intro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Introduction to C  </h3>
+    <p>C was developed in 1972 by Dennis Ritchie. It's the foundation of many modern programming languages like C++, Java, and Python. It is widely used in systems programming and embedded development.</p>
+  </div>
+  <div class="details" id="intro">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>History of C</h3>
+    <p>C evolved from B language and was influenced by BCPL. It became standardized in 1989 (ANSI C) and later in 1999 (C99). The latest standard is C11.</p>
+  </div>
+
+  <div class="details" id="env">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Setting up the C Development Environment</h3>
+    <p>You can use compilers like GCC or Clang. IDEs like Code::Blocks, VS Code, or Dev-C++ make coding easier. Setup includes installing a compiler and configuring your editor.</p>
+  </div>
+
+  <div class="details" id="syntax">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Basic Syntax and Structure of a C Program</h3>
+    <p>C programs start with #include directives followed by the main() function. Curly braces define blocks of code. Semicolons end statements.</p>
+  </div>
+
+  <div class="details" id="types">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Data Types, Variables, and Constants</h3>
+    <p>C supports int, float, char, double etc. Constants can be defined using const or #define. Variables must be declared before use.</p>
+  </div>
+
+  <div class="details" id="control">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Control Flow</h3>
+    <p>Control structures include if, else, switch, for, while, and do-while. They help manage the logic and decision-making in programs.</p>
+  </div>
+
+  <div class="details" id="functions">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Functions</h3>
+    <p>Functions allow code reuse. C supports function declaration, definition, and recursion. The main function is the entry point of any program.</p>
+  </div>
+
+  <div class="details" id="arrays">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Arrays and Strings</h3>
+    <p>Arrays are collections of similar data types. Strings are character arrays ending with a null terminator '\\0'. They are essential for managing data collections.</p>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
