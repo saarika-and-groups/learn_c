@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Code Editor & Compiler</title>
+  <style>
+    body {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    h1 ,h3 {
+      color: #4ec9b0;
+      text-align: center;
+    }
+
+    textarea {
+      width: 90%;
+      height: 500px;
+      background: #2d2d2d;
+      color: #d4d4d4;
+      border: 1px solid #3c3c3c;
+      padding: 10px;
+      font-size: 16px;
+      overflow-wrap: break-word;
+      resize: none;
+    }
+
+    button {
+      background: #4ec9b0;
+      border: none;
+      padding: 10px 25px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: #2a9d8f;
+    }
+
+    pre {
+      background: #2d2d2d;
+      border: 1px solid #3c3c3c;
+      padding: 15px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      min-height: 100px;
+      width: 90%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>C Code Editor & Compiler by Saarika and Groups</h1>
+  <h3> NOTE :User input is not working make sure user input should be assign to a Variable</h3>
+  <textarea id="code">
+// Sample C program
+#include <stdio.h>
+
+int main() {
+    printf("Hello, Saarika and Groups\\n");
+    return 0;
+}
+  </textarea>
+  <button id="runBtn">Run Code</button>
+  <pre id="output">// Output will appear here</pre>
+
+  <script>
+    const runBtn = document.getElementById('runBtn');
+    const codeArea = document.getElementById('code');
+    const output = document.getElementById('output');
+
+    // Replace 'YOUR_RAPIDAPI_KEY' with your actual RapidAPI key for Paiza.IO
+    const apiKey = '4f05b9285emshe2ae591d64f67e5p10577ajsn20330d2ae370';
+
+    runBtn.onclick = async () => {
+      output.textContent = 'Submitting code...';
+      console.log('Submitting code to Paiza.IO API');
+
+      // 1. Create a new runner
+      const createUrl = 'https://paiza-io.p.rapidapi.com/runners/create';
+      const payload = new URLSearchParams({
+        source_code: codeArea.value,
+        language: 'c',
+        input: '',
+      });
+
+      try {
+        const createRes = await fetch(createUrl, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'paiza-io.p.rapidapi.com'
+          },
+          body: payload
+        });
+        const createData = await createRes.json();
+        console.log('Create runner response:', createData);
+
+        if (!createData.id) {
+          output.textContent = 'Error: Failed to create runner.';
+          console.error('Failed to create runner:', createData);
+          return;
+        }
+
+        output.textContent = 'Code submitted. Waiting for result...';
+
+        // 2. Poll for result
+        let result;
+        while (true) {
+          const getUrl = `https://paiza-io.p.rapidapi.com/runners/get_details?id=${createData.id}`;
+          const getRes = await fetch(getUrl, {
+            method: 'GET',
+            headers: {
+              'X-RapidAPI-Key': apiKey,
+              'X-RapidAPI-Host': 'paiza-io.p.rapidapi.com'
+            }
+          });
+          result = await getRes.json();
+          console.log('Polling result:', result);
+          if (result.status === 'completed') break;
+          await new Promise(r => setTimeout(r, 1000));
+        }
+
+        output.textContent = result.stdout || result.stderr || result.build_stderr || 'No output.';
+      } catch (err) {
+        output.textContent = 'Error: ' + err.message;
+        console.error('Error during API call:', err);
+      }
+    };
+  </script>
+</body>
+
+</html>

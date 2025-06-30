@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Code Editor & Compiler</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e1e1e, #004080);
+      color: #d4d4d4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1,
+    h3 {
+      color: #4ec9b0;
+      text-align: center;
+      margin: 1rem 0 0.5rem;
+      text-shadow: 0 0 8px #4ec9b0;
+      font-weight: 700;
+    }
+
+    nav.navbar {
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.5);
+      flex-wrap: wrap;
+    }
+
+    nav.navbar a.nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    nav.navbar a.nav-logo img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+      filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
+    }
+
+    nav.navbar ul.nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    nav.navbar ul.nav-menu li.nav-item {}
+
+    nav.navbar ul.nav-menu li.nav-item a.nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+
+    nav.navbar ul.nav-menu li.nav-item a.nav-link:hover {
+      color: #ffc107;
+      text-shadow: 0 0 8px #ffc107;
+    }
+
+    main.compiler-section {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 2rem 3rem;
+      background: linear-gradient(135deg, #002244, #004080);
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 123, 255, 0.5);
+      font-family: 'Courier New', Courier, monospace;
+      color: #d4d4d4;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main.compiler-section h3 {
+      color: #4ec9b0;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-shadow: 0 0 8px #4ec9b0;
+    }
+
+    main.compiler-section textarea#code {
+      width: 100%;
+      height: 400px;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      border: 1px solid #3c3c3c;
+      padding: 15px;
+      font-size: 16px;
+      overflow-wrap: break-word;
+      resize: vertical;
+      border-radius: 12px;
+      font-family: 'Courier New', Courier, monospace;
+      box-shadow: inset 0 0 10px rgba(78, 201, 176, 0.5);
+      transition: box-shadow 0.3s ease;
+      margin-bottom: 1.5rem;
+    }
+
+    main.compiler-section textarea#code:focus {
+      outline: none;
+      box-shadow: inset 0 0 15px #4ec9b0;
+    }
+
+    main.compiler-section button#runBtn {
+      background: #4ec9b0;
+      border: none;
+      padding: 12px 30px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      color: #1e1e1e;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      align-self: center;
+      box-shadow: 0 4px 12px rgba(78, 201, 176, 0.7);
+    }
+
+    main.compiler-section button#runBtn:hover {
+      background: #2a9d8f;
+      box-shadow: 0 6px 16px rgba(42, 216, 143, 0.9);
+      color: white;
+    }
+
+    main.compiler-section pre#output {
+      background: #1e1e1e;
+      border: 1px solid #3c3c3c;
+      padding: 20px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      min-height: 120px;
+      width: 100%;
+      border-radius: 12px;
+      color: #4ec9b0;
+      font-family: 'Courier New', Courier, monospace;
+      box-shadow: inset 0 0 15px rgba(78, 201, 176, 0.7);
+      text-align: left;
+      overflow-x: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      nav.navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      main.compiler-section {
+        margin: 1rem;
+        padding: 1.5rem;
+        height: auto;
+      }
+
+      main.compiler-section textarea#code {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="home.html" class="nav-logo">
+      <img src="learn_c/Features-Of-C-language.webp" alt="Saarika and Groups Logo" />
+      Saarika and Groups
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="c_roadmap.html" class="nav-link">Roadmap</a></li>
+      <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="compiler.html" class="nav-link">Compiler</a></li>
+    </ul>
+  </nav>
+
+  <main class="compiler-section">
+    <h3>C Code Editor & Compiler</h3>
+    <textarea id="code">
+// Sample C program
+#include <stdio.h>
+
+int main() {
+    printf("Hello, Saarika and Groups!\\n");
+    return 0;
+}
+    </textarea>
+    <button id="runBtn">Run Code</button>
+    <pre id="output">// Output will appear here</pre>
+  </main>
+
+  <script>
+    const runBtn = document.getElementById('runBtn');
+    const codeArea = document.getElementById('code');
+    const output = document.getElementById('output');
+
+    // Replace 'YOUR_RAPIDAPI_KEY' with your actual RapidAPI key for Paiza.IO
+    const apiKey = '4f05b9285emshe2ae591d64f67e5p10577ajsn20330d2ae370';
+
+    runBtn.onclick = async () => {
+      output.textContent = 'Submitting code...';
+      console.log('Submitting code to Paiza.IO API');
+
+      // 1. Create a new runner
+      const createUrl = 'https://paiza-io.p.rapidapi.com/runners/create';
+      const payload = new URLSearchParams({
+        source_code: codeArea.value,
+        language: 'c',
+        input: '',
+      });
+
+      try {
+        const createRes = await fetch(createUrl, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'paiza-io.p.rapidapi.com',
+          },
+          body: payload,
+        });
+        const createData = await createRes.json();
+        console.log('Create runner response:', createData);
+
+        if (!createData.id) {
+          output.textContent = 'Error: Failed to create runner.';
+          console.error('Failed to create runner:', createData);
+          return;
+        }
+
+        output.textContent = 'Code submitted. Waiting for result...';
+
+        // 2. Poll for result
+        let result;
+        while (true) {
+          const getUrl = `https://paiza-io.p.rapidapi.com/runners/get_details?id=${createData.id}`;
+          const getRes = await fetch(getUrl, {
+            method: 'GET',
+            headers: {
+              'X-RapidAPI-Key': apiKey,
+              'X-RapidAPI-Host': 'paiza-io.p.rapidapi.com',
+            },
+          });
+          result = await getRes.json();
+          console.log('Polling result:', result);
+          if (result.status === 'completed') break;
+          await new Promise((r) => setTimeout(r, 1000));
+        }
+
+        output.textContent = result.stdout || result.stderr || result.build_stderr || 'No output.';
+      } catch (err) {
+        output.textContent = 'Error: ' + err.message;
+        console.error('Error during API call:', err);
+      }
+    };
+  </script>
+</body>
+
+</html>
