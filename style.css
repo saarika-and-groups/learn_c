@@ -10,6 +10,7 @@ body {
   background: var(--light-bg);
   padding: 2rem;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 h2 {
