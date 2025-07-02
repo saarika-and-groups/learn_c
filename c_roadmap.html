@@ -29,6 +29,7 @@
     <div class="box" onclick="showDetails('dynamic')">Dynamic Memory Allocation</div>
     <div class="box" onclick="showDetails('prepro')">Preproccessor Derectives And marcos</div>
     <div class="box" onclick="showDetails('error')">Error Handling and Debugging Techniques</div>
+    <div class="box" onclick="showDetails('dsa')">DSA Using C</div>
   </div>
 
   <div class="details" id="intro">
@@ -2013,10 +2014,972 @@ int main() {
     </ul>
     
   </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Data Structures and Algorithmes</h3>
+    <p>DSA (Data Structures and Algorithms) is the study of organizing data efficiently using data structures like arrays, stacks, and trees, paired with step-by-step procedures (or algorithms) to solve problems effectively. 
+    Data structures manage how data is stored and accessed, while algorithms focus on processing this data.</p>
+    <p>Why to Learn DSA?
+      <li>Learning DSA boosts your problem-solving abilities and make you a stronger programmer.</li>
+      <li>DSA is foundation for almost every software like GPS, Search Engines, AI ChatBots, Gaming Apps, Databases, Web Applications, etc</li>
+      <li>Top Companies like Google, Microsoft, Amazon, Apple, Meta and many other heavily focus on DSA in interviews.</li>
+    </p>
+    <pre>Do you know the basics already and looking to prepare in limited time?  
 
+    Try our free course GfG 160 where we have 160 most asked problems along with well written editorials and video explanations.
+    The course also has 90 bonus problems.</pre>
+    <h3>How to learn DSA?</h3>
+    <ol>
+      <li>Learn at-least one programming language (C, C++, Java, Python or JavaScript) and build your basic logic.</li>
+      <li>Learn about Time and Space complexities</li>
+      <li>Learn Data Structures (Arrays, Linked List, etc) and Algorithms (Searching, Sorting, etc).</li>
+      <li>Once you learn main topics, it is important to solve coding problems against some predefined test cases,</li>
+      <li>Solve problems daily using GfG Problem of the Day</li>
+    </ol>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240917121350/5-Steps-to-learn-DSA-from-scratch.webp" alt="dsa">
+    <p>Hoping you have learned a programming language of your choice, here comes the next stage of the roadmap - Learn about Time and Space Complexities.</p>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>Steps To Learn DSA</h3>
+    <h3>1.Logic Building:</h3>
+    <p>Once you have learned basics of a programming language, it is recommended that you learn basic logic building</p>
+    <li>Logic Building Guide</li>
+    <li>Quiz on Logic Building</li>
+    <h3>2. Learn about Complexities:</h3>
+    <p>To analyze algorithms, we mainly measure order of growth of time or space taken in terms of input size. We do this in the worst case scenario in most of the cases.
+     Please refer the below links for a clear understanding of these concepts.</p>
+     <li>Complexity Analysis Guide</li>
+     <li>Quiz on Complexity Analysis</li>
+    <h3>3.Array:</h3>
+    <p>Array is a linear data structure where elements are allocated contiguous memory, allowing for constant-time access.</p>
+    <li>Array Data Structure Guide</li>
+    <li>Quiz on Arrays</li>
+    <h3>4. Searching Algorithms:</h3>
+    <p>Searching algorithms are used to locate specific data within a large set of data. It helps find a target value within the data.
+       There are various types of searching algorithms, each with its own approach and efficiency.</p>
+    <li>Searching Algorithms Guide</li>
+    <li>Quiz on Searching</li>
+    <h3>5.Sorting Algorithmes:</h3>
+    <p>Sorting algorithms are used to arrange the elements of a list in a specific order, such as numerical or alphabetical. 
+      It organizes the items in a systematic way, making it easier to search for and access specific elements.</p>
+    <li>Sorting Algorithms Guide</li>
+    <li>Quiz on Sorting</li>
+    <h3>6.Hashing:</h3>
+    <p>Hashing is a technique that generates a fixed-size output (hash value) from an input of variable size using mathematical formulas called hash functions.
+       Hashing is commonly used in data structures for efficient searching, insertion and deletion.</p>
+    <li>Hashing Guide</li>
+    <li>Quiz on Hashing</li>
+    <h3>7. Two Pointer Technique:</h3>
+    <p>In Two Pointer Technique, we typically use two index variables from two corners of an array.
+       We use the two pointer technique for searching a required point or value in an array.</p>
+    <li>Two Pointer Technique</li>
+    <li>Quiz on Two Pointer Technique</li>
+    <h3>8. Window Sliding Technique:</h3>
+    <p>In Window Sliding Technique, we use the result of previous subarray to quickly compute the result of current.</p>
+    <li>Window Sliding Technique</li>
+    <li>Quiz on Slidingw Windo</li>
+    <h3>9.Prefix Sum Technique</h3>
+    <p>In Prefix Sum Technique, we compute prefix sums of an array to quickly find results for a subarray.</p>
+    <li>Prefix Sum Technique</li>
+    <li>Quiz on Prefix Sum</li>
+    <h3>10. String:</h3>
+    <p>String is a sequence of characters, typically immutable and have limited set of elements (lower case or all English alphabets).</p>
+    <li>Strings Guide</li>
+    <li>Quiz on Strings</li>
+    <h3>11. Recursion:</h3>
+    <p>Recursion is a programming technique where a function calls itself within its own definition. I
+      t is usually used to solve problems that can be broken down into smaller instances of the same problem.</p>
+    <li>Recursive Algorithms Guide</li>
+    <li>Quiz on Recursion</li>
+    <h3>12.Matrix/Grid:</h3>
+    <p>Matrix is a two-dimensional array of elements, arranged in rows and columns.
+      It is represented as a rectangular grid, with each element at the intersection of a row and column.</p>
+    <li>Matrix Guide</li>
+    <li>Quiz on Matrix/Grid.</li>
+    <h3>13.Linked List:</h3>
+    <p>Linked list is a linear data structure that stores data in nodes, which are connected by pointers.
+       Unlike arrays, nodes of linked lists are not stored in contiguous memory locations and can only be accessed sequentially, starting from the head of list.</p>
+    <li>Linked List Guidet</li>
+    <li>Quiz on Linked Lis</li>
+    <h3>14.Stack:</h3>
+    <p>Stack is a linear data structure that follows the Last In, First Out (LIFO) principle. Stacks play an important role in managing function calls, memory, and are widely used in algorithms like stock span problem,
+       next greater element and largest area in a histogram.</p>
+    <li>Stack Guide</li>
+    <li>Quiz on Stack</li>
+    <h3>15. Queue:</h3>
+    <p>Queue is a linear data structure that follows the First In, First Out (FIFO) principle.
+       Queues play an important role in managing tasks or data in order, scheduling and message handling systems.</p>
+    <li>Queue Guide</li>
+    <li>Quiz on Queue</li>
+    <h3>16. Deque:</h3>
+    <p>A deque (double-ended queue) is a data structure that allows elements to be added or removed from both ends efficiently.</p>
+    <h3>17.Tree:</h3>
+    <p>Tree is a non-linear, hierarchical data structure consisting of nodes connected by edges, with a top node called the root and nodes having child nodes.
+       It is widely used in file systems, databases, decision-making algorithms, etc.</p>
+    <li>Tree Data Structure Guide</li>
+    <li>Quiz on Tree</li>
+    <h3>18.Heap</h3>
+    <p>Heap is a complete binary tree data structure that satisfies the heap property. Heaps are usually used to implement priority queues,
+       where the smallest or largest element is always at the root of the tree.</p>
+    <li>Heap Guide</li>
+    <li>Quiz on Heap</li>
+    <h3>19. Graph:</h3>
+    <p>Graph is a non-linear data structure consisting of a finite set of vertices(or nodes) and a set of edges(or links)that connect a pair of nodes.
+       Graphs are widely used to represent relationships between entities.</p>
+    <h3>20.Greedy Algorithm:</h3>
+    <p>Greedy Algorithm builds up the solution one piece at a time and chooses the next piece which gives the most obvious and immediate benefit i.e., which is the most optimal choice at that moment.
+       So the problems where choosing locally optimal also leads to the global solutions are best fit for Greedy.</p>
+    <h3>21.Dynamic Programming:</h3>
+    <p>Dynamic Programming is a method used to solve complex problems by breaking them down into simpler subproblems. By solving each subproblem only once and storing the results, it avoids redundant computations,
+       leading to more efficient solutions for a wide range of problems.</p>
+    <h3>22.Other Algorithmes:</h3>
+    <p>Bitwise Algorithms: Operate on individual bits of numbers.</p>
+    <p>Backtracking Algorithm : Follow Recursion with the option to revert and traces back if the solution from current point is not feasible.</p>
+    <p>Divide and conquer: A strategy to solve problems by dividing them into smaller subproblems, solving those subproblems, and combining the solutions to obtain the final solution.</p>
+    <p>Branch and Bound : Used in combinatorial optimization problems to systematically search for the best solution. It works by dividing the problem into smaller subproblems, or branches,
+       and then eliminating certain branches based on bounds on the optimal solution.
+       This process continues until the best solution is found or all branches have been explored.</p>
+    <p>Geometric algorithms are a set of algorithms that solve problems related to shapes, points, lines and polygons.</p>
+    <p>Randomized algorithms are algorithms that use randomness to solve problems. They make use of random input to achieve their goals, often leading to simpler and more efficient solutions.
+       These algorithms may not product same result but are particularly useful in situations when a probabilistic approach is acceptable.</p>
+    <h3>23.Advanced Data Structure and Algorithms</h3>
+    <p>Advanced Data Structures like Trie, Segment Tree, Red-Black Tree and Binary Indexed Tree offer significant performance improvements for specific problem domains.
+       They provide efficient solutions for tasks like fast prefix searches, range queries, dynamic updates, and maintaining balanced data structures, which are crucial for handling large datasets and real-time processing.</p>
+    <li>trie</li>
+    <li>Segment Tree</li>
+    <li>Red-Black Tree</li>
+    <li>Binary Indexed Tree</li>
+    <li>Practice Advanced Data Structures</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>1.Logic Building Problems</h3>
+    <p>Logic building is about creating clear, step-by-step methods to solve problems using simple rules and principles.
+       It’s the heart of coding, enabling programmers to think, reason, and arrive at smart solutions just like we do.</p>
+    <p>Here are some tips for improving your programming logic:</p>
+    <ol>
+      <li>Understand the problem: Read and understand the problem statement.</li>
+      <li>Generate Examples: Create additional input and output cases for each problem.</li>
+      <li>Draw observations: Draw observations and patterns based on the examples you created.</li>
+      <li>Start with Basic: First, think of the basic way to solve the problem then optimize the solution.</li>
+    </ol>
+    <h3>Basic Problems</h3>
+    <p>
+    <li>Check Even or Odd</li>
+    <li>Multiplication Table</li>
+    <li>Sum of Naturals</li>
+    <li> Sum of Squares of Naturals</li>
+    <li> Swap Two Numbers</li>
+    <li> Closest Number</li>
+    <li>Dice Problem</li>
+    <li>Nth Term of AP</li>
+    </p>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>2.Analysis of Algorithms</h3>
+    <p>Analysis of Algorithms is a fundamental aspect of computer science that involves evaluating performance of algorithms and programs.
+     Efficiency is measured in terms of time and space.</p>
+    <h3>Basics on Analysis of Algorithms:</h3>
+    <p>
+      <li>Why is Analysis Important?</li>
+      <li>Order of Growth</li>
+      <li>Asymptotic Analysis</li>
+      <li>Worst, Average and Best Cases of Algorithms</li>
+    </p>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>3.Array Data Structure Guide</h3>
+    <p>In this article, we introduce array, implementation in different popular languages, its basic operations and commonly seen problems / interview questions.</p>
+    <li>An array stores items (in case of C/C++ and Java Primitive Arrays) or their references (in case of Python, JS, Java Non-Primitive) at contiguous locations.</li>
+    <li>It offers mainly the following advantages over other data structures.
+        Random Access : i-th item can be accessed in O(1) Time as we have the base address and every item or reference is of same size.
+        Cache Friendliness : Since items / references are stored at contiguous locations, we get the advantage of locality of reference.</li>
+    <li>It is not useful in places where we have operations like insert in the middle, delete from middle and search in a unsorted data.</li>
+    <li>It is a fundamental and linear data structure using which we build other data structures like Stack Queue, Deque, Graph, Hash Table, etc.</li>
+    <p>Basic problems</p>
+   <li> Print Alternates</li>
+   <li>Linear Search</li>
+   <li>Largest Element</li>
+   <li>Second Largest</li>
+   <li>Largest Three</li>
+   <li>Leaders in an array</li>
+   <li>Check if Sorted</li>
+   <li>Remove Duplicates from Sorted</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>4.Searching Algorithms</h3>
+    <p>Searching algorithms are essential tools in computer science used to locate specific items within a collection of data. In this tutorial, we are mainly going to focus upon searching in an array. When we search an item in an array,
+       there are two most common algorithms used based on the type of input array.</p>
+    <li>Linear Search : It is used for an unsorted array. It mainly does one by one comparison of the item to be search with array elements. It takes linear or O(n) Time.</li>
+    <li>Binary Search : It is used for a sorted array. It mainly compares the array's middle element first and if the middle element is same as input, then it returns. Otherwise it searches in either left half or right half based on comparison result (Whether the mid element is smaller or greater).
+       This algorithm is faster than linear search and takes O(Log n) time.</li>
+    <p>Problems</p>
+    <li>Largest in an Array</li>
+    <li>Second Largest in an array</li>
+    <li>Largest three in an array</li>
+    <li>Missing Number</li>
+    <li>First Repeating</li>
+    <li>Missing and Repeating</li>
+    <li>Count 1’s in a sorted binary array</li>
+    <li>Closest to 0 Sum Pair</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>5.Sorting Algorithms</h3>
+    <p>A Sorting Algorithm is used to rearrange a given array or list of elements in an order. For example, a given array [10, 20, 5, 2] becomes [2, 5, 10, 20] after sorting in increasing order and becomes [20, 10, 5, 2] after sorting in decreasing order.</p>
+    <li>There exist different sorting algorithms for different different types of inputs, for example a binary array, a character array, an array with a large range of values or an array with many duplicates or a small vs large array.</li>
+    <li>The algorithms may also differ according to output requirements. For example, stable sorting (or maintains original order of equal elements) or not stable.</li>
+    <li>Sorting is provided in library implementation of most of the programming languages. These sorting functions typically are general purpose functions with flexibility of providing the expected sorting order (increasing or decreasing or by a specific key in case of objects).</li>
+    <p>Problems</p>
+     <li>Check if an array is Sorted</li>
+     <li>Sort an array of two types</li>
+     <li>Sort a String</li>
+     <li>Sort Each Row of a Matrix</li>
+     <li>Sort a Matrix</li>
+     <li>Sort a Linked List</li>
+     <li>Sort in Wave Form</li>
+     <li>Sort by Frequency</li>
+     <li>Sort from Different Machines</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>6.Hashing in Data Structure</h3>
+    <p>Hashing is a technique used in data structures that efficiently stores and retrieves data in a way that allows for quick access.</p>
+    <li>Hashing involves mapping data to a specific index in a hash table (an array of items) using a hash function. It enables fast retrieval of information based on its key.</li>
+    <li>The great thing about hashing is, we can achieve all three operations (search, insert and delete) in O(1) time on average.</li>
+    <li>Hashing is mainly used to implement a set of distinct items (only keys) and dictionaries (key value pairs).</li>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240807120551/Introduction-to-Hashing.webp" alt="hashing">
+    <p>Problems</p>
+    <li>Check tor Subset</li>
+    <li>Check for Disjoint</li>
+    <li>Check for Equal</li>
+    <li>Fizz Buzz</li>
+    <li>Max distance between two occurrences</li>
+    <li>Duplicate within K Distance</li>
+    <li>Intersection of Two Arrays</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>7.Two Pointers Technique</h3>
+    <p>Two pointers is really an easy and effective technique that is typically used for Two Sum in Sorted Arrays, Closest Two Sum, Three Sum, Four Sum, Trapping Rain Water and many other popular interview questions. Given a sorted array arr (sorted in ascending order) and a target,
+       find if there exists any pair of elements (arr[i], arr[j]) such that their sum is equal to the target.</p>
+    <h3>Illustration : </h3>
+    <pre>
+       Input: arr[] = {10, 20, 35, 50}, target =70
+       Output:  Yes
+       Explanation : There is a pair (20, 50) with given target.
 
+       Input: arr[] = {10, 20, 30}, target =70
+       Output :  No
+       Explanation : There is no pair with sum 70
+
+       Input: arr[] = {-8, 1, 4, 6, 10, 45], target = 16
+       Output: Yes
+       Explanation : There is a pair (6, 10) with given target.
+    </pre>
+    <h3>Naive Method - O(n^2) Time and O(1) Space</h3>
+    <p>The very basic approach is to generate all the possible pairs and check if any of them add up to the target value. To generate all pairs, we simply run two nested loops.</p>
+    <pre>
+      #include <stdbool.h>
+#include <stdio.h>
+
+// Function to check whether any pair exists
+// whose sum is equal to the given target value
+bool twoSum(int arr[], int n, int target){
+
+    // Iterate through each element in the array
+    for (int i = 0; i < n; i++){
+
+        // For each element arr[i], check every
+        // other element arr[j] that comes after it
+        for (int j = i + 1; j < n; j++){
+
+            // Check if the sum of the current pair
+            // equals the target
+            if (arr[i] + arr[j] == target)
+                return true;
+        }
+    }
+    // If no pair is found after checking
+    // all possibilities
+    return false;
+}
+
+int main(){
+
+    int arr[] = {0, -1, 2, -3, 1};
+    int target = -2;
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Call the twoSum function and print the result
+    if (twoSum(arr, n, target))
+        printf("true\n");
+    else
+        printf("false\n");
+  
+    return 0;
+}
+    </pre>
+    <h3>output:</h3>
+    <pre>true</pre>
+    <h3>Better Approaches - Binary Search and Hashing</h3>
+    <p>We can use more methods like Binary Search and Hashing to solve this problem
+     (Please refer Two Sum article for details) in better time complexity but Two Pointer Technique is the best solution for this problem that works well for sorted arrays.</p>
+    <h3>Two-Pointer Technique - O(n) time and O(1) space</h3>
+    <p>The idea of this technique is to begin with two corners of the given array. We use two index variables left and right to traverse from both corners.</p>
+    <h3>Illustration:</h3>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240930115143/two-pointer-tech--2.webp" alt="twopointimg">
+    <pre>
+      #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+// Comparison function for qsort
+int compare(const void *a, const void *b){
+    return (*(int *)a - *(int *)b);
+}
+
+// Function to check whether any pair exists
+// whose sum is equal to the given target value
+bool twoSum(int arr[], int n, int target){
+    // Sort the array
+    qsort(arr, n, sizeof(int), compare);
+
+    int left = 0, right = n - 1;
+
+    // Iterate while left pointer is less than right
+    while (left < right){
+        int sum = arr[left] + arr[right];
+
+        // Check if the sum matches the target
+        if (sum == target)
+            return true;
+        else if (sum < target)
+            left++; // Move left pointer to the right
+        else
+            right--; // Move right pointer to the left
+    }
+    // If no pair is found
+    return false;
+}
+
+int main(){
+    int arr[] = {0, -1, 2, -3, 1};
+    int target = -2;
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Call the twoSum function and print the result
+    if (twoSum(arr, n, target))
+        printf("true\n"); 
+    else
+        printf("false\n");
+
+    return 0;
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>true</pre>
+    <p>
+      How does this work?
+      We need to prove that we never miss a valid pair.
+
+      Case 1 ( When we increment left ) In this case we simply ignore current arr[left] and move to the next element by doing left++.
+      We do this when arr[left] + arr[right] is smaller than the target. The reason this step is safe is, if arr[left] is giving a smaller value than sum, then it will given even much less values for the elements before arr[right].
+      Now how about the elements after arr[right]? Note that we moved right when we were sure that no pair can be formed with the current right (arr[right] was too high), so arr[left] can not form a pair with those values also.
+    </p>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>8.Sliding Window Technique</h3>
+    <p>Sliding Window Technique is a method used to solve problems that involve subarray or substring or window.</p>
+    <li>The main idea is to use the results of previous window to do computations for the next window.</li>
+    <li>This technique is commonly used in algorithms like finding subarrays with a specific sum, finding the longest substring with unique characters,
+       or solving problems that require a fixed-size window to process elements efficiently.</li>
+    <h3>Example Problem - Maximum Sum of a Subarray with K Elements</h3>
+    <p>Given an array and an integer k, we need to calculate the maximum sum of a subarray having size exactly k.</p>
+    <pre>
+      Input  : arr[] = {100, 200, 300, 400}, k = 2
+Output : 700
+We get maximum sum by considering the subarray [300, 400]
+
+Input  : arr[] = {1, 4, 2, 10, 23, 3, 1, 0, 20}, k = 4 
+Output : 39
+We get maximum sum by adding subarray {4, 2, 10, 23} of size 4.
+
+Input  : arr[] = {2, 3}, k = 3
+Output : Invalid
+There is no subarray of size 3 as size of whole array is 2.
+    </pre>
+    <h3>Naive Approach - O(n k) Time and O(1) Space</h3>
+    <p>We run two nest loops and compute sums of all subarrays of size k</p>
+    <pre>
+      // O(n*k) solution for finding maximum sum of
+// a subarray of size k
+#include <limits.h>
+#include <math.h>
+#include <stdio.h>
+
+// Find maximum between two numbers.
+int max(int num1, int num2)
+{
+    return (num1 > num2) ? num1 : num2;
+}
+
+// Returns maximum sum in a subarray of size k.
+int maxSum(int arr[], int n, int k)
+{
+    // Initialize result
+    int max_sum = INT_MIN;
+
+    // Consider all blocks starting with i.
+    for (int i = 0; i < n - k + 1; i++) {
+        int current_sum = 0;
+        for (int j = 0; j < k; j++)
+            current_sum = current_sum + arr[i + j];
+
+        // Update result if required.
+        max_sum = max(current_sum, max_sum);
+    }
+
+    return max_sum;
+}
+
+// Driver code
+int main()
+{
+    int arr[] = { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
+    int k = 4;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("%d", maxSum(arr, n, k));
+    return 0;
+}
+
+// This code is contributed by Aditya Kumar (adityakumar129)
+    </pre>
+    <h3>Output:</h3>
+    <pre>24</pre>
+    <h3>Using the Sliding Window Technique - O(n) Time and O(1) Space</h3>
+    <li>We compute the sum of the first k elements out of n terms using a linear loop and store the sum in variable window_sum.</li>
+    <li>Then we will traverse linearly over the array till it reaches the end and simultaneously keep track of the maximum sum.</li>
+    <li>To get the current sum of a block of k elements just subtract the first element from the previous block and add the last element of the current block.</li>
+    <h3>The below representation will make it clear how the window slides over the array.</h3>
+    <pre>
+      <p>Consider an array arr[] = {5, 2, -1, 0, 3} and value of k = 3 and n = 5
+
+      This is the initial phase where we have calculated the initial window sum starting from index 0 .
+       At this stage the window sum is 6. Now, we set the maximum_sum as current_window</p>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/sliding-window1.png">
+      <p>Now, we slide our window by a unit index. Therefore, now it discards 5 from the window and adds 0 to the window. Hence, we will get our new window sum by subtracting 5 and then adding 0 to it. So, our window sum now becomes 1.
+         Now, we will compare this window sum with the maximum_sum. As it is smaller, we won't change the maximum_sum. </p>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/sliding-window2.png" >
+      <p>Similarly, now once again we slide our window by a unit index and obtain the new window sum to be 2. Again we check if this current window sum is greater than the maximum_sum till now. Once, again it is smaller so we don't change the maximum_sum.
+      Therefore, for the above array our maximum_sum is 6.</p>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/sliding-window3.png">
+    </pre>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>9.Prefix Sum Array - Implementation and Applications</h3>
+    <p>Given an array arr[] of size n, the task is to find the prefix sum of the array. A prefix sum array is another array prefixSum[] of the same size, such that prefixSum[i] is arr[0] + arr[1] + arr[2] . . . arr[i].</p>
+    <h3>Examples:</h3>
+    <pre>
+      Input: arr[] = [10, 20, 10, 5, 15]
+Output: 10 30 40 45 60
+Explanation: For each index i, add all the elements from 0 to i:
+prefixSum[0] = 10, 
+prefixSum[1] = 10 + 20 = 30, 
+prefixSum[2] = 10 + 20 + 10 = 40 and so on.
+
+Input: arr[] = [30, 10, 10, 5, 50]
+Output: 30 40 50 55 105
+Explanation: For each index i, add all the elements from 0 to i:
+prefixSum[0] = 30, 
+prefixSum[1] = 30 + 10 = 40,
+prefixSum[2] = 30 + 10+ 10 = 50 and so on.
+    </pre>
+    <h3>Prefix Sum Implementation</h3>
+    <pre>
+      The idea is to create an array prefixSum[] of size n, and for each index i in range 1 to n - 1, set prefixSum[i] = prefixSum[i - 1] + arr[i].
+    </pre>
+    <h3>To solve the problem follow the given steps:</h3>
+    <li>Declare a new array prefixSum[] of the same size as the input array</li>
+    <li>Run a for loop to traverse the input array</li>
+    <li>For each index add the value of the current element and the previous value of the prefix sum array</li>
+    <h3>Below is the implementation of the above approach:</h3>
+    <pre>
+      #include <bits/stdc++.h>
+using namespace std;
+
+// function to find the prefix sum array
+vector<int> findPrefixSum(vector<int> &arr) {
+    int n = arr.size();
+    
+    // to store the prefix sum
+    vector<int> prefixSum(n);
+
+    // initialize the first element
+    prefixSum[0] = arr[0];
+
+    // Adding present element with previous element
+    for (int i = 1; i < n; i++)
+        prefixSum[i] = prefixSum[i - 1] + arr[i];
+    
+    return prefixSum;
+}
+
+int main() {
+    vector<int> arr = {10, 20, 10, 5, 15};
+    vector<int> prefixSum = findPrefixSum(arr);
+    for(auto i:prefixSum) {
+        cout<<"i"<<"";
+    }
+    return 0;
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>10 30 40 45 60 </pre>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>10.String in Data Structure</h3>
+    <p>A string is a sequence of characters. The following facts make string an interesting data structure.</p>
+    <li>Small set of elements. Unlike normal array, strings typically have smaller set of items. For example, lowercase English alphabet has only 26 characters. ASCII has only 256 characters.</li>
+    <li>Strings are immutable in programming languages like Java, Python, JavaScript and C#.</li>
+    <li>Many String Problems can optimized using the fact that the character set size is small. For example sorting can be done faster, counting frequencies of items is faster and many interesting interview questions are based on this.</li>
+    <p>Problems</p>
+    <li>Check for Binary</li>
+    <li>Camel Case Conversion</li>
+    <li>Binary Substrings with Corners as 1s</li>
+    <li>Check for Panagram</li>
+    <li>Check for Palindrome</li>
+    <li>Check for Substring</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>11.Recursive Algorithms</h3>
+    <p>Recursion is technique used in computer science to solve big problems by breaking them into smaller,
+       similar problems. The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called a recursive function. Using a recursive algorithm, certain problems can be solved quite easily.</p>
+    <li>A recursive algorithm takes one step toward solution and then recursively call itself to further move. The algorithm stops once we reach the solution.</li>
+    <li>Since called function may further call itself, this process might continue forever. So it is essential to provide a base case to terminate this recursion process.</li>
+    <h3>Steps to Implement Recursion</h3>
+    <pre>
+      Step1 - Define a base case: Identify the simplest (or base) case for which the solution is known or trivial. This is the stopping condition for the recursion, as it prevents the function from infinitely calling itself.
+
+Step2 - Define a recursive case: Define the problem in terms of smaller subproblems. Break the problem down into smaller versions of itself, and call the function recursively to solve each subproblem.
+
+Step3 - Ensure the recursion terminates: Make sure that the recursive function eventually reaches the base case, and does not enter an infinite loop.
+
+Step4 - Combine the solutions: Combine the solutions of the subproblems to solve the original problem.
+    </pre>
+    <h3>Example:</h3>
+    <pre>
+      #include <stdio.h>
+
+int fact(int n) {
+  
+    // BASE CONDITION
+    if (n == 0)
+        return 1;
+  
+    return n * fact(n - 1);
+}
+
+int main() {
+    printf("Factorial of 5 : %d\n", fact(5));
+    return 0;
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>Factorial of 5 : 120</pre>
+    <h3>Illustration of the above code:</h3>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240924132748/factorial.webp" >
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>12.Matrix Data Structure</h3>
+    <p>Matrix Data Structure is a two-dimensional array arranged in rows and columns. It is commonly used to represent mathematical matrices and is fundamental in various fields like mathematics, computer graphics,
+       and data processing. Matrices allow for efficient storage and manipulation of data in a structured format.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240416133310/Introduction-to-Matrix.webp" >
+    <h3>Representation of Matrix Data Structure:</h3>
+    <p>As you can see from the below image, the elements are organized in rows and columns. As shown in the image, the cell a[0][0] is the first element of the first row and first column.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240415190237/Representation-of-Matrix-1024.webp" >
+    <h3>Declaration of Matrix Data Structure :</h3>
+    <p>Declaration of a Matrix or two-dimensional array is very much similar to that of a one-dimensional array, given as follows.</p>
+    <pre>
+      #include <stdio.h>
+
+int main() {
+
+    // Defining number of rows and columns in matrix
+    int rows = 3, cols = 3;
+  
+    // Array Declaration
+    int arr[rows][cols];
+  
+    return 0;
+}
+    </pre>
+    <h3>Initializing Matrix Data Structure:</h3>
+    <p>In initialization, we assign some initial value to all the cells of the matrix. Below is the implementation to initialize a matrix in different languages:</p>
+    <pre>
+      #include <stdio.h>
+
+int main() {
+
+    // Initializing a 2-D array with values
+    int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    return 0;
+}
+    </pre>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>13.Linked List Data Structure</h3>
+    <p>A linked list is a fundamental data structure in computer science. It mainly allows efficient insertion and deletion operations compared to arrays. Like arrays,
+       it is also used to implement other data structures like stack, queue and deque. Here’s the comparison of Linked List vs Arrays</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250619155958124670/Linked-list.webp" >
+    <h3>Linked List:</h3>
+    <li>Data Structure: Non-contiguous</li>
+    <li>Memory Allocation: Typically allocated one by one to individual elements</li>
+    <li>Insertion/Deletion: Efficient</li>
+    <li>Access: Sequential</li>
+
+    <h3>Singly Linked List Tutorial</h3>
+    <p>A singly linked list is a fundamental data structure, it consists of nodes where each node contains a data field and a reference to the next node in the linked list.
+       The next of the last node is null, indicating the end of the list. Linked Lists support efficient insertion and deletion operations.</p>
+    <h3>Understanding Node Structure</h3>
+    <p>In a singly linked list, each node consists of two parts: data and a pointer to the next node. This structure allows nodes to be dynamically linked together, forming a chain-like sequence.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240917161540/Singly-Linked-List.webp" >
+    <pre>
+      // Definition of a Node in a singly linked list
+struct Node {
+    int data;          
+    struct Node* next;
+};
+
+// Function to create a new Node
+struct Node* newNode(int data) {
+    struct Node* temp = 
+      (struct Node*)malloc(sizeof(struct Node));
+    temp->data = data;
+    temp->next = NULL;
+    return temp;
+}
+    </pre>
+    <h3>Doubly Linked List Tutorial</h3>
+    <p>A doubly linked list is a more complex data structure than a singly linked list, but it offers several advantages. The main advantage of a doubly linked list is that it allows for efficient traversal of the list in both directions.
+       This is because each node in the list contains a pointer to the previous node and a pointer to the next node. This allows for quick and easy insertion and deletion of nodes from the list, as well as efficient traversal of the list in both directions.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240809123741/Insertion-at-the-End-in-Doubly-Linked-List-copy.webp" >
+    <h3>Representation of Doubly Linked List in Data Structure</h3>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240809124907/Node-Structure-of-Doubly-Linked-List.webp" >
+    <pre>
+      struct Node {
+
+    // To store the Value or data.
+    int data;
+
+    // Pointer to point the Previous Element
+    Node* prev;
+
+    // Pointer to point the Next Element
+    Node* next;
+};
+
+// Function to create a new node
+struct Node *createNode(int new_data) {
+    struct Node *new_node = (struct Node *)
+    malloc(sizeof(struct Node));
+    new_node->data = new_data;
+    new_node->next = NULL;
+    new_node->prev = NULL;
+    return new_node;
+}
+    </pre>
+    <h3>Introduction to Circular Linked List</h3>
+    <p>A circular linked list is a data structure where the last node connects back to the first, forming a loop. This structure allows for continuous traversal without any interruptions. Circular linked lists are especially helpful for tasks like scheduling and managing playlists, allowing for smooth navigation. In this tutorial,
+       we’ll cover the basics of circular linked lists, how to work with them, their advantages and disadvantages, and their applications.</p>
+    <h3>What is a Circular Linked List?</h3>
+    <p>A circular linked list is a special type of linked list where all the nodes are connected to form a circle. Unlike a regular linked list, which ends with a node pointing to NULL, the last node in a circular linked list points back to the first node. This means that you can keep traversing the list without ever reaching a NULL value.</p>
+    <pre>
+      // Node structure
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+// Function to create a new node
+struct Node *createNode(int value){
+
+    // Allocate memory
+    struct Node *newNode = 
+      (struct Node *)malloc(sizeof(struct Node));
+
+    // Set the data
+    newNode->data = value;
+  
+    // Initialize next to NULL
+    newNode->next = NULL;
+  
+    // Return the new node
+    return newNode;
+}
+    </pre>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>14.Stack Data Structure</h3>
+    <p>A Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). LIFO implies that the element that is inserted last, 
+      comes out first and FILO implies that the element that is inserted first, comes out last.</p>
+    <p>It behaves like a stack of plates, where the last plate added is the first one to be removed. Think of it this way:
+      <li>Pushing an element onto the stack is like adding a new plate on top.</li>
+      <li>Popping an element removes the top plate from the stack.</li>
+    </p>
+    <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726165552/Stack-Data-Structure.png">
+    <p>Problems</p>
+    <li>The Celebrity Problem</li>
+    <li>Implement Queue using Stacks</li>
+    <li>Implement two stacks in an array</li>
+    <li>Implement Stack using Queues</li>
+    <li>Stack using priority queue or heap</li>
+    <li>Stack using single queue</li>
+    <li>Infix to Postfix</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>15.Queue Data Structure</h3>
+    <p>A Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order.</p>
+    <li>It follows the principle of "First in, First out" (FIFO), where the first element added to the queue is the first one to be removed.</li>
+    <li>It is used as a buffer in computer systems where we have speed mismatch between two devices that communicate with each other. For example, CPU and keyboard and two devices in a network</li>
+    <li>Queue is also used in Operating System algorithms like CPU Scheduling and Memory Management, and many standard algorithms like Breadth First Search of Graph, Level Order Traversal of a Tree.</li>
+    <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726165642/Queue-Data-structure1.png" >
+    <p>Problems</p>
+    <li>Implement Stack using Queues</li>
+    <li>Minimum Depth of a Binary Tree</li>
+    <li>BFS for a Graph</li>
+    <li>Detect cycle in an undirected graph using BFS</li>
+    <li>Right View of a Binary Tree</li>
+    <li>Check whether a graph is Bipartite</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>16.Tree Data Structure</h3>
+    <p>Tree Data Structure is a non-linear data structure in which a collection of elements known as nodes are connected to each other via edges such that there exists exactly one path between any two nodes.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240415185343/tree-data-structure-banners-(2).webp" >
+    <h3>Introduction to Tree Data Structure</h3>
+    <p>Tree data structure is a hierarchical structure that is used to represent and organize data in the form of parent child relationship. The following are some real world situations which are naturally a tree.</p>
+    <li>Folder structure in an operating system</li>
+    <li>Tag structure in an HTML (root tag the as html tag) or XML document.</li>
+    <p>The topmost node of the tree is called the root, and the nodes below it are called the child nodes. Each node can have multiple child nodes, and these child nodes can also have their own child nodes, forming a recursive structure.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240424125622/Introduction-to-tree-.webp" >
+    <h3>Basic Terminologies In Tree Data Structure:</h3>
+    <li>Parent Node: The node which is an immediate predecessor of a node is called the parent node of that node. {B} is the parent node of {D, E}.</li>
+    <li>Child Node: The node which is the immediate successor of a node is called the child node of that node. Examples: {D, E} are the child nodes of {B}.</li>
+    <li>Root Node: The topmost node of a tree or the node which does not have any parent node is called the root node. {A} is the root node of the tree. A non-empty tree must contain exactly one root node and exactly one path from the root to all other nodes of the tree.</li>
+    <li>Leaf Node or External Node: The nodes which do not have any child nodes are called leaf nodes. {I, J, K, F, G, H} are the leaf nodes of the tree.</li>
+    <li>Ancestor of a Node: Any predecessor nodes on the path of the root to that node are called Ancestors of that node. {A,B} are the ancestor nodes of the node {E}</li>
+    <li>Descendant: A node x is a descendant of another node y if and only if y is an ancestor of x.</li>
+    <li>Sibling: Children of the same parent node are called siblings. {D,E} are called siblings.</li>
+    <li>Level of a node: The count of edges on the path from the root node to that node. The root node has level 0.</li>
+    <li>Internal node: A node with at least one child is called Internal Node.</li>
+    <li>Neighbour of a Node: Parent or child nodes of that node are called neighbors of that node.</li>
+    <li>Subtree: Any node of the tree along with its descendant.</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>17.Heap Data Structure</h3>
+    <p>A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is greater than or equal to its own value.
+       Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20241105101737867907/min-heap-1.webp" >
+    <p>Problems</p>
+    <li>Check if an array is Heap?</li>
+    <li>K’th Smallest & K'th Largest</li>
+    <li>Heap Sort</li>
+    <li>Heap Sort for Decreasing Order</li>
+    <li>Height of a Heap with N Nodes</li>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>18.Graph Algorithms</h3>
+    <p>Graph is a non-linear data structure like tree data structure. The limitation of tree is, it can only represent hierarchical data. For situations where nodes or vertices are randomly connected with each other other, 
+      we use Graph. Example situations where we use graph data structure are, a social network, a computer network, a network of locations used in GPS and many more examples where different nodes or vertices are connected without any hierarchic or constraint on structure.</p>
+    <h3>Representations of Graph</h3>
+    <p>Here are the two most common ways to represent a graph : For simplicity, we are going to consider only unweighted graphs in this post.</p>
+    <h3>Adjacency Matrix Representation</h3>
+    <p>An adjacency matrix is a way of representing a graph as a matrix of boolean (0's and 1's)
+
+    Let's assume there are n vertices in the graph So, create a 2D matrix adjMat[n][n] having dimension n x n.</p>
+    <pre>
+      <li>If there is an edge from vertex i to j, mark adjMat[i][j] as 1. </li>
+      <li>If there is no edge from vertex i to j, mark adjMat[i][j] as 0.</li>
+    </pre>
+    <h3>Representation of Undirected Graph as Adjacency Matrix:</h3>
+    <p>The below figure shows an undirected graph. Initially, the entire Matrix is ​​initialized to 0. If there is an edge from source to destination, 
+      we insert 1 to both cases (adjMat[source][destination] and adjMat[destination][source]) because we can go either way.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230727130331/Undirected_to_Adjacency_matrix.png" >
+    <pre>
+      #include<stdio.h>
+
+#define V 4
+
+void addEdge(int mat[V][V], int i, int j) {
+    mat[i][j] = 1;
+    mat[j][i] = 1; // Since the graph is undirected
+}
+
+void displayMatrix(int mat[V][V]) {
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++)
+            printf("%d ", mat[i][j]);
+        printf("\n");
+    }
+}
+
+int main() {
+    // Create a graph with 4 vertices and no edges
+    // Note that all values are initialized as 0
+    int mat[V][V] = {0};
+
+    // Now add edges one by one
+    addEdge(mat, 0, 1);
+    addEdge(mat, 0, 2);
+    addEdge(mat, 1, 2);
+    addEdge(mat, 2, 3);
+
+    /* Alternatively, we can also create using the below
+       code if we know all edges in advance
+
+    int mat[V][V] = {
+        {0, 1, 0, 0},
+        {1, 0, 1, 0},
+        {0, 1, 0, 1},
+        {0, 0, 1, 0}
+    }; */
+
+    printf("Adjacency Matrix Representation\n");
+    displayMatrix(mat);
+
+    return 0;
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+      Adjacency Matrix Representation
+0 1 1 0 
+1 0 1 0 
+1 1 0 1 
+0 0 1 0 
+    </pre>
+
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>19.Greedy Algorithms</h3>
+    <p>Greedy algorithms are a class of algorithms that make locally optimal choices at each step with the hope of finding a global optimum solution.</p>
+    <li>At every step of the algorithm, we make a choice that looks the best at the moment. To make the choice, we sometimes sort the array so that we can always get the next optimal choice quickly. We sometimes also use a priority queue to get the next optimal item.</li>
+    <li>After making a choice, we check for constraints (if there are any) and keep picking until we find the solution.</li>
+    <li>Greedy algorithms do not always give the best solution. For example, in coin change and 0/1 knapsack problems, we get the best solution using Dynamic Programming.</li>
+    <li>Examples of popular algorithms where Greedy gives the best solution are Fractional Knapsack, Dijkstra's algorithm, Kruskal's algorithm, Huffman coding and Prim's Algorithm</li>
+    <h3>Example:</h3>
+    <pre>
+      // C Program to find the minimum number of coins
+// to construct a given amount using greedy approach
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int compare(const void *a, const void *b) {
+    return (*(int *)b - *(int *)a);
+}
+
+int minCoins(int coins[], int n, int amount) {
+  
+    // Sort the coins in descending order
+    qsort(coins, n, sizeof(int), compare);
+  
+    int res = 0;
+  
+    // Start from the coin with highest denomination
+    for(int i = 0; i < n; i++) {
+        if(amount >= coins[i]) {
+          
+            // Find the maximum number of ith coin 
+            // we can use
+            int cnt = (amount / coins[i]);
+          
+            // Add the count to result
+            res += cnt;
+          
+            // Subtract the corresponding amount from
+            // the total amount
+            amount -= (cnt * coins[i]);
+        }
+      
+        // Break if there is no amount left
+        if(amount == 0)
+            break;
+    }
+    return res;
+}
+
+int main() {
+    int coins[] = {5, 2, 10, 1};
+    int n = sizeof(coins) / sizeof(coins[0]);
+    int amount = 39;
+  
+    printf("%d", minCoins(coins, n, amount));
+    return 0;
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>6</pre>
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>20.Dynamic Programming or DP</h3>
+    <p>Dynamic Programming is an algorithmic technique with the following properties.</p>
+    <li>It is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for the same inputs, we can optimize it using Dynamic Programming.</li>
+    <li>The idea is to simply store the results of subproblems so that we do not have to re-compute them when needed later. This simple optimization typically reduces time complexities from exponential to polynomial.</li>
+    <li>Some popular problems solved using Dynamic Programming are Fibonacci Numbers, Diff Utility (Longest Common Subsequence), Bellman–Ford Shortest Path, Floyd Warshall, Edit Distance and Matrix Chain Multiplication.</li>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250106170245473186/Dynamic-Programming-or-DP-1.webp" >
+
+  </div>
+  <div class="details" id="dsa">
+    <button class="close-btn" onclick="hideAll()">× Close</button>
+    <h3>21.Other Algorithmes</h3>
+    <h3>Bitwise Algorithms</h3>
+    <p>Bitwise algorithms in Data Structures and Algorithms (DSA) involve manipulating individual bits of binary representations of numbers to perform operations efficiently.
+       These algorithms utilize bitwise operators like AND, OR, XOR, NOT, Left Shift, and Right Shift.</p>
+    <h3>Backtracking Algorithm</h3>
+    <p>Backtracking algorithms are like problem-solving strategies that help explore different options to find the best solution. They work by trying out different paths and if one doesn't work, they backtrack and try another until they find the right one.
+       It's like solving a puzzle by testing different pieces until they fit together perfectly.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231016112106/backtracking-banner-(1).png" >
+    <h3>Divide and Conquer Algorithm</h3>
+    <p>Divide and Conquer algorithm is a problem-solving strategy that involves.</p>
+    <li>Divide : Break the given problem into smaller non-overlapping problems.</li>
+    <li>Conquer : Solve Smaller Problems</li>
+    <li>Combine : Use the Solutions of Smaller Problems to find the overall result.</li>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240403162200/Divide-and-Conquer-banner.webp" >
+    <h3>Branch and Bound Algorithm</h3>
+    <p>The Branch and Bound Algorithm is a method used in combinatorial optimization problems to systematically search for the best solution.
+       It works by dividing the problem into smaller subproblems, or branches, and then eliminating certain branches based on bounds on the optimal solution.
+     This process continues until the best solution is found or all branches have been explored. Branch and Bound is commonly used in problems like the traveling salesman and job scheduling.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221031102458/IntroductiontoBranchandBound.png" >
+    <p>Branch and bound is an algorithmic technique used in computer science to solve optimization problems. Branch and bound is a systematic way of exploring all possible solutions to a problem by dividing the problem space into smaller sub-problems and then applying bounds or constraints to eliminate certain subproblems from consideration.</p>
+    <h3>Geometric Algorithms</h3>
+    <p>Geometric algorithms are a type of algorithm that deal with solving problems related to geometry. These algorithms are used to solve various geometric problems such as computing the area of a polygon,
+       finding the intersection of geometric shapes, determining the convex hull of a set of points, and many other tasks related to geometric objects and their properties. Geometric algorithms are important in various fields such as computer graphics, computer-aided design, robotics, and geographical information systems.</p>
+    <h3>Randomized Algorithms</h3>
+    <p>Randomized algorithms in data structures and algorithms (DSA) are algorithms that use randomness in their computations to achieve a desired outcome. These algorithms introduce randomness to improve efficiency or simplify the algorithm design. By incorporating random choices into their processes, randomized algorithms can often provide faster solutions or better approximations compared to deterministic algorithms. 
+      They are particularly useful in situations where exact solutions are difficult to find or when a probabilistic approach is acceptable.</p>
+    <p>For example, in Randomized Quick Sort, we use a random number to pick the next pivot (or we randomly shuffle the array). We use randomization in Quick Sort to avoid a pattern for which it always causes a worst case. This is useful when we implement a library sort function using Quick Sort as it allows the library function to be a general purpose function and work almost uniformly for all cases.</p>
+    
+  </div>
   <script src="script.js"></script>
-
 </body>
 
 </html>
