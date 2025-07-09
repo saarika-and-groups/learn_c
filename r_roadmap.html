@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Roadmap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="main-title">R Programming and Statistics Computing Roadmap</h1>
+    <p id="main-title">Welcome to the R programming and statistics computing roadmap! Here you can find the latest
+        updates and plans for
+        your study.</p>
+    <div class="container" id="roadmap">
+        <div class="box" onclick="showDetails('intro')">Introduction to R programming</div>
+        <div class="box" onclick="showDetails('data-types')">Data Types</div>
+        <div class="box" onclick="showDetails('Operator')">Operators</div>
+        <div class="box" onclick="showDetails('input-output')">Input and Output</div>
+        <div class="box" onclick="showDetails('Controls')">Control Flow Statement</div>
+        <div class="box" onclick="showDetails('data-structures')">data-structures</div>
+    </div>
+    <div class="details" id="intro">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Introduction to R programming</h2>
+        <p>R is an interpreted programming language widely used for statistical computing, data analysis and
+            visualization. R language is open-source with large community support. R provides structured approach to
+            data manipulation, along with decent libraries and packages like Dplyr, Ggplot2, shiny, Janitor and more.
+        </p>
+        <pre>
+            print("Hello World!")
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>Hello World!</code>
+        </output>
+    </div>
+    <div class="details" id="intro">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Installation and SetUp</h2>
+        <h2>Go to this website called R studio download </h2>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231206154742/r.jpg" alt="img">
+        <p>You have to download both the applications first go with R Base and then install RStudio. after click on
+            install R you will get a new page like this.</p>
+        <a href="https://posit.co/download/rstudio-desktop/ ">click here t Download</a>
+
+
+
+    </div>
+    <div class="details" id="" intro>
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Fundamentals of R</h2>
+        <ul>
+            <li>Basic syntax</li>
+            <li>Data types (vectors, matrices, lists, data frames)</li>
+            <li>operators</li>
+            <li>Control structures (if-else, loops)</li>
+            <li>Functions and packages</li>
+            <li>Input and output</li>
+            <li>Data manipulation with dplyr</li>
+            <li>Data visualization with ggplot2</li>
+            <li>Statistical analysis</li>
+            <li>Debugging and error handling</li>
+            <li>Working with dates and times</li>
+            <li>String manipulation</li>
+            <li>File handling</li>
+            <li>Working with databases</li>
+        </ul>
+
+    </div>
+    <div class="details" id="data-types">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Data Types in R</h2>
+        <p>R supports various data types, including numeric, character, logical, and complex. Understanding these data
+            types is crucial for effective data manipulation and analysis.</p>
+        <ul>
+            <li><strong>Numeric:</strong> Represents numbers, both integers and floating-point.</li>
+            <li><strong>Character:</strong> Represents text strings.</li>
+            <li><strong>Logical:</strong> Represents boolean values (TRUE or FALSE).</li>
+            <li><strong>Complex:</strong> Represents complex numbers with real and imaginary parts.</li>
+            <li><strong>Factor:</strong> Represents categorical data with levels.</li>
+            <li><strong>Data Frame:</strong> A table-like structure that can hold different data types in columns.</li>
+            <li><strong>List:</strong> A collection of objects that can be of different types.</li>
+            <li><strong>Matrix:</strong> A two-dimensional array that holds elements of the same data type.</li>
+            <li><strong>Array:</strong> A multi-dimensional structure that holds elements of the same data type.</li>
+        </ul>
+        <pre>
+            # Example of numeric and character data types
+            my_numeric <- 42
+            my_character <- "Hello R"
+            print(my_numeric)
+            print(my_character)
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>[1] 42</code><br>
+            <code>[1] "Hello R"</code>
+        </output>
+
+    </div>
+    <div class="details" id="data-types">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Numeric</h2>
+        <p>Decimal values are called numeric in R. It is the default R data type for numbers in R. If we assign a
+            decimal value to a variable x as follows, x will be of numeric type.
+            Real numbers with a decimal point are represented using this data type in R. It uses a format for
+            double-precision floating-point numbers to represent numerical values.</p>
+        <pre>
+            x = 5.6
+
+            print(class(x))
+
+            print(typeof(x))
+            </pre>
+        <output>
+            [1] "numeric"
+            [1] "double"
+        </output>
+        <h2> Interger </h2>
+        <p>
+            R supports integer data types which are the set of all integers. we can create as well as convert a value
+            into an integer type using the as.integer() function.
+            we can also use the capital 'L' notation as a suffix to denote that a particular value is of the integer R
+            data type.
+        </p>
+        <pre>
+x = as.integer(5)
+
+print(class(x))
+
+print(typeof(x))
+
+y = 5L
+
+print(class(y))
+
+print(typeof(y))
+        </pre>
+
+        <h2>Logical </h2>
+        <p>
+            R has logical data types that take either a value of true or false. A logical value is often created via a
+            comparison between variables.
+            Boolean values, which have two possible values, are represented by this R data type: FALSE or TRUE
+        </p>
+        <pre>
+x = 4
+y = 3
+
+z = x > y
+
+print(z)
+
+print(class(z))
+
+print(typeof(z))
+        </pre>
+
+        <h2>
+            Complex Data type in R
+        </h2>
+        <p>
+            R supports complex data types that are set of all the complex numbers. The complex data type is to store
+            numbers with an imaginary component.
+        </p>
+        <pre>
+x = 4 + 3i
+
+print(class(x))
+
+print(typeof(x))
+        </pre>
+
+        <h2>Character Data type in R </h2>
+        <p>
+            R supports character data types where we have all the alphabets and special characters. It stores character
+            values or strings. Strings in R can contain alphabets, numbers, and symbols.
+            The easiest way to denote that a value is of character type in R data type is to wrap the value inside
+            single or double inverted commas.
+
+
+        </p>
+        <pre>
+char = "Geeksforgeeks"
+
+print(class(char)) 
+
+print(typeof(char))
+        </pre>
+
+    </div>
+    <div class="details " id="data-types">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Convert the Data Type of an Object to Another</h2>
+        <p>
+            as.data_type(object)
+        </p>
+        <pre>
+print(as.numeric(TRUE))
+
+print(as.complex(3L))
+
+print(as.logical(10.5))
+
+print(as.character(1+2i))
+
+print(as.numeric("12-04-2020"))
+    </pre>
+        <output>
+            [1] 1
+            [1] 3+0i
+            [1] TRUE
+            [1] "1+2i"
+            [1] NA
+            Warning message:
+            In print(as.numeric("12-04-2020")) : NAs introduced by coercion
+        </output>
+
+
+    </div>
+    <div class="details" id="operators">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Operators in R</h2>
+        <p>R provides various operators for performing arithmetic, logical, and relational operations. Understanding
+            these operators is essential for data manipulation and analysis.</p>
+        <ul>
+            <li><strong>Arithmetic Operators:</strong> +, -, *, /, ^ (addition, subtraction, multiplication, division,
+                exponentiation)</li>
+            <li><strong>Relational Operators:</strong> ==, !=, &lt;, &gt;, &lt;=, &gt;= (equal to, not equal to, less
+                than,
+                greater than, less than or equal to, greater than or equal to)</li>
+            <li><strong>Logical Operators:</strong> &amp;&amp;, ||, ! (logical AND, logical OR, logical NOT)</li>
+            <li><strong>Assignment Operator:</strong> <- (assigns a value to a variable)</li>
+        </ul>
+        <pre>
+            # Example of arithmetic and relational operators
+            a <- 10
+            b <- 5
+            sum <- a + b
+            is_greater <- a > b
+            print(sum)
+            print(is_greater)
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>[1] 15</code><br>
+            <code>[1] TRUE</code>
+        </output>
+
+    </div>
+
+    <div class="details" id="data-structures">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Data Structures in R</h2>
+        <p>
+            A data structure is a particular way of organizing data in a computer so that it can be used effectively.
+            The idea is to reduce the space and time complexities of different tasks. Data structures in R programming
+            are tools for holding multiple values.
+        </p>
+        <ul>
+            <li>vectors</li>
+            <li>Matrices</li>
+            <li>Array</li>
+        </ul>
+        <p>
+            R’s base data structures are often organized by their dimensionality (1D, 2D or nD) and whether they’re
+            homogeneous (all elements must be of the identical type) or heterogeneous (the elements are often of various
+            types). This gives rise to the six data types which are most frequently utilized in data analysis.
+        </p>
+
+
+    </div>
+    <div class="details" id="data-structures">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2> vectors</h2>
+        <p>
+            A vector is an ordered collection of basic data types of a given length. The only key thing here is all the
+            elements of a vector must be of the identical data type e.g homogeneous data structures. Vectors are
+            one-dimensional data structures.
+        </p>
+        <h2>OR</h2>
+        <p>
+            R Vectors are the same as the arrays in R language which are used to hold multiple data values of the same
+            type. One major key point is that in R Programming Language the indexing of the vector will start from '1'
+            and not from '0'. We can create numeric vectors and character vectors as well.
+        </p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200409134016/Vectors-in-R.jpg" alt="img" />
+        <h2> Creating a vector in R</h2>
+        <p>
+            A vector is a basic data structure that represents a one-dimensional array. to create a array we use the "c"
+            function which the most common method use in R Programming Language. We can also use seq() function or use
+            colons ":" also as shown in the example.
+        </p>
+        <pre>
+X<- c(61, 4, 21, 67, 89, 2)
+cat('using c function', X, '\n')
+
+Y<- seq(1, 10, length.out = 5) 
+cat('using seq() function', Y, '\n') 
+
+Z<- 2:7
+cat('using colon', Z)
+        </pre>
+        <output>
+            using c function 61 4 21 67 89 2
+            using seq() function 1 3.25 5.5 7.75 10
+            using colon 2 3 4 5 6 7
+        </output>
+
+
+    </div>
+   
+    <div class="details" id="data-structures">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>
+            Types of R vectors
+        </h2>
+        <ul>
+            <li>Numeric vectors</li>
+            <li>Character vectors</li>
+            <li>Logical vectors</li>
+        </ul>
+        <h2>
+            Numeric vectors
+        </h2>
+        <p>
+            Numeric vectors are those which contain numeric values such as integer, float, etc. The L suffix in R is
+            used to specify that a number is an integer and not a numeric (floating-point) value.
+        </p>
+        <pre>
+v1 <- c(4, 5, 6, 7)
+typeof(v1)
+
+v2 <- c(1L, 4L, 2L, 5L)
+typeof(v2)
+        </pre>
+        <output>
+            [1] "double"
+            [1] "integer"
+        </output>
+
+        <h2>
+            Character vectors
+        </h2>
+        <p>
+            Character vectors in R contain alphanumeric values and special characters. In R, when a vector contains
+            elements of mixed types (like characters and numbers), R automatically coerces the entire vector to a single
+            type. Since characters are more general than numbers in R, the vector is coerced to a character vector.
+        </p>
+        <pre>
+v1 <- c('geeks', '2', 'hello', 57)
+typeof(v1)
+        </pre>
+        <output>
+            [1] "character"
+        </output>
+
+        <h2>
+            Logical vectors
+        </h2>
+        <p>
+            Logical vectors in R contain Boolean values such as TRUE, FALSE and NA for Null values. In R, NA is a
+            special value used to represent missing or undefined data. When used in a logical vector, NA is treated as a
+            logical value because it is specifically designed to work with logical vectors and other types of data.
+        </p>
+        <pre>
+v1 <- c(TRUE, FALSE, TRUE, NA)
+typeof(v1)
+        </pre>
+        <output>
+            [1] "logical"
+        </output>
+
+    </div>
+    <div class="details" id="data-structures">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Accessing R vector elements</h2>
+        <p>Accessing elements in a vector is the process of performing operation on an individual element of a vector.
+            There are many ways through which we can access the elements of the vector. The most common is using the
+            '[]', symbol.</p>
+        <pre>
+X <- c(2, 5, 18, 1, 12)
+cat('Using Subscript operator', X[2], '\n')
+
+Y <- c(4, 8, 2, 1, 17)
+cat('Using combine() function', Y[c(4, 1)], '\n')
+        </pre>
+        <output>
+            Using Subscript operator 5
+            Using combine() function 1 4
+        </output>
+    </div>
+    <div class="details" id="data-structures">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Array</h2>
+        <p>Arrays are important data storage structures defined by a fixed number of dimensions. Arrays are used for the
+            allocation of space at contiguous memory locations.</p>
+        <p>Arrays are used to store data in a tabular form. It is a collection of elements of the same data type. The
+            elements of an array are stored in contiguous memory locations. An array can have one or more
+            dimensions.</p>
+        <h2>Creating an Array</h2>
+        <p>We can create an array in R using the array() function. The array() function takes a vector of data and
+            dimensions as arguments.</p>
+        <pre>
+# Creating a 2D array
+my_array <- array(1:12, dim = c(3, 4))
+print(my_array)
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>
+                [,1] [,2] [,3] [,4]<br>
+                [1,]    1    4    7   10<br>
+                [2,]    2    5    8   11<br>
+                [3,]    3    6    9   12
+            </code>
+        </output>
+
+        <h2>Types of Arrays</h2>
+        <ul>
+            <li><strong>Uni-dimensional Array</strong></li>
+            <li><strong>Multi-dimensional Array</strong></li>
+            <li><strong>Array using vectors </strong></li>
+        </ul>
+        <h2>Uni-dimensional Array</h2>
+        <p>A one-dimensional array is a linear array that contains elements in a single row or column. It can be
+            created using the array() function with a single dimension.</p>
+        <pre>
+# Creating a uni-dimensional array
+uni_array <- array(1:5, dim = c(5))
+print(uni_array)
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>[1] 1 2 3 4 5</code>
+        </output>
+        <h2>Multi-dimensional Array</h2>
+        <p>A multi-dimensional array is an array with more than one dimension, such as a 2D or 3D array. It can be
+            created using the array() function with multiple dimensions.</p>
+        <pre>
+# Creating a multi-dimensional array (2D)
+multi_array <- array(1:12, dim = c(3, 4))
+print(multi_array)
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>
+                [,1] [,2] [,3] [,4]<br>
+                [1,]    1    4    7   10<br>
+                [2,]    2    5    8   11<br>
+                [3,]    3    6    9   12
+            </code>
+        </output>
+        <h2>Array using vectors</h2>
+        <p>We can create an array using vectors by specifying the dimensions. The array will be filled with the values
+            from the vector in a column-wise manner.</p>
+        <pre>
+# Creating an array using vectors
+vec <- c(1, 2, 3, 4, 5, 6)
+my_array_from_vec <- array(vec, dim = c(2, 3))
+print(my_array_from_vec)
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>
+                [,1] [,2] [,3]<br>
+                [1,]    1    3    5<br>
+                [2,]    2    4    6
+            </code>
+        </output>
+        <h2>Accessing Array Elements</h2>
+        <p>We can access elements of an array using the subscript operator []. The subscripts specify the indices of the
+            elements we want to access.</p>
+        <pre>
+uni_array <- c(10, 20, 30, 40, 50)
+
+cat("Accessing the first element:\n")
+print(uni_array[1])
+
+cat("\nAccessing the third element:\n")
+print(uni_array[3])
+
+cat("\nAccessing the fifth element:\n")
+print(uni_array[5])
+        </pre>
+        <output>
+            <code>
+            Accessing the first element
+            [1] 10
+            Accessing the third element
+            [1] 30
+            Accessing the fifth element
+            [1] 50
+        </code>
+        </output>
+
+
+
+
+    </div>
+    <div class="details" id="data-structures">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Matrices</h2>
+        <p>R-matrix is a two-dimensional arrangement of data in rows and columns. In a matrix, rows are the ones that
+            run horizontally and columns are the ones that run vertically. In R programming, matrices are
+            two-dimensional, homogeneous data structures. These are some examples of matrices:</p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200417231634/f116-300x140.png" alt="img " />
+
+        <h2>Creating a Matrix in R</h2>
+        <p>
+            To create a matrix in R you need to use the function called matrix().The arguments to this matrix() are the
+            set of elements in the vector. You have to pass how many numbers of rows and how many numbers of columns you
+            want to have in your matrix.
+        </p>
+        syntax:
+matrix(data, nrow, ncol, byrow, dimnames)
+<ul>
+    <li><strong>data </strong> : values you want to enter</li>
+    <li><strong>nrow</strong> : no. of rows</li>
+    <li><strong>ncol </strong> no. of columns</li>
+    <li><strong>byrow</strong> : logical clue, if 'true' value will be assigned by rows </li>
+    <li><strong>dimnames </strong>: names of rows and columns </li>
+</ul>
+<pre>
+A = matrix(
+  c(1, 2, 3, 4, 5, 6, 7, 8, 9), 
+  nrow = 3,   
+  ncol = 3,         
+  byrow = TRUE          
+)
+
+rownames(A) = c("a", "b", "c")
+colnames(A) = c("c", "d", "e")
+
+cat("The 3x3 matrix:\n")
+print(A)
+</pre>
+<pre>
+ The 3x3 matrix:
+  c d e
+a 1 2 3
+b 4 5 6
+c 7 8 9   
+</pre>
+
+
+        
+
+    </div>
+ 
+    <div class="details" id="input-output">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Input and Output in R</h2>
+        <p>R provides functions for reading data from files and writing data to files. Common functions include
+            read.csv(), write.csv(), read.table(), and write.table().</p>
+        <pre>
+            # Example of reading a CSV file
+            my_data <- read.csv("data.csv")
+            print(head(my_data))
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>First few rows of the data frame</code>
+        </output>
+        <h2>OR </h2>
+        <ul>
+            <li>Using readline() method</li>
+            <li>Using scan() method</li>
+        </ul>
+        <pre>
+            # Using readline() to get user input
+            user_input <- readline(prompt = "Enter your name: ")
+            print(paste("Hello,", user_input))
+
+            # Using scan() to read multiple values
+            numbers <- scan(what = numeric(), nmax = 5, quiet = TRUE)
+            print(numbers)
+        </pre>
+        <output>
+            <p>Output:</p>
+            <code>Hello, [user's name]</code><br>
+            <code>[1] [user's input numbers]</code>
+        </output>
+    </div>
+    <div class="details" id="Controls">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>Control Flow Statements in R</h2>
+        <p>R provides control flow statements like if-else, for loops, while loops, and repeat loops to control the
+            execution of code based on conditions.</p>
+        <ul>
+            <li>if condition</li>
+            <li>if-else condition</li>
+            <li>for loop</li>
+            <li>while loop</li>
+            <li>repeat loop</li>
+            <li>break statement</li>
+            <li>next statement</li>
+
+        </ul>
+    </div>
+    <div class="details" id="Controls">
+        <button class="close-btn" onclick="hideAll()">X close</button>
+        <h2>if condition</h2>
+        <p>This control structure checks the expression provided in parenthesis is true or not. If true, the execution
+            of the statements in braces {} continues. </p>
+        syntax:
+        <pre>
+            if (condition) {
+                # statements to execute if condition is true
+            }
+        </pre>
+        <p>Example:</p>
+        <pre>
+            x = 10
+            if (x > 5) {
+                print("x is greater than 5")
+            }
+        </pre>
+        <output>
+            [1] "x is greater than 5"
+        </output>
+        <h2>if-else condition</h2>
+        <p>It is similar to if condition but when the test expression in if condition fails, then statements in else
+            condition are executed.</p>
+        syntax:
+        <pre>
+            if (condition) {
+                # statements to execute if condition is true
+            } else {
+                # statements to execute if condition is false
+            }
+            </pre>
+
+        <p>Example:</p>
+        <pre>
+            x = 3
+            if (x > 5) {
+                print("x is greater than 5")
+            } else {
+                print("x is not greater than 5")
+            }
+        </pre>
+        <output>
+            [1] "x is not greater than 5"
+        </output>
+        <h2>for loop</h2>
+        <p>It is used to iterate over a sequence (like a vector or list)
+            or a range of numbers. The loop executes a block of code for each element in the sequence.</p>
+        syntax:
+        <pre>
+            for (variable in sequence) {
+                # statements to execute for each element
+            }
+        </pre>
+        <p>Example:</p>
+        <pre>
+            for (i in 1:5) {
+                print(paste("Iteration:", i))
+            }
+        </pre>
+        <output>
+            [1] "Iteration: 1"
+            [1] "Iteration: 2"
+            [1] "Iteration: 3"
+            [1] "Iteration: 4"
+            [1] "Iteration: 5"
+        </output>
+        <h2>while loop</h2>
+        <p>It is used to repeatedly execute a block of code as long as a specified condition is true.</p>
+        syntax:
+        <pre>
+            while (condition) {
+                # statements to execute while condition is true
+            }
+        </pre>
+        <p>Example:</p>
+        <pre>
+            count <- 1
+            while (count <= 5) {
+                print(paste("Count:", count))
+                count <- count + 1
+            }
+        </pre>
+        <output>
+            [1] "Count: 1"
+            [1] "Count: 2"
+            [1] "Count: 3"
+            [1] "Count: 4"
+            [1] "Count: 5"
+        </output>
+        <h2>repeat loop</h2>
+        <p>It is used to repeatedly execute a block of code until a break statement is encountered.</p>
+        syntax:
+        <pre>
+            repeat {
+                # statements to execute
+                if (condition) {
+                    break  # exit the loop
+                }
+            }
+        </pre>
+        <p>Example:</p>
+        <pre>
+            count <- 1
+            repeat {
+                print(paste("Count:", count))
+                count <- count + 1
+                if (count > 5) {
+                    break  # exit the loop when count exceeds 5
+                }
+            }
+        </pre>
+        <output>
+            [1] "Count: 1"
+            [1] "Count: 2"
+            [1] "Count: 3"
+            [1] "Count: 4"
+            [1] "Count: 5"
+        </output>
+        <h2>break statement</h2>
+        <p>It is used to exit a loop prematurely when a certain condition is met.</p>
+        syntax:
+        <pre>
+            for (variable in sequence) {
+                if (condition) {
+                    break  # exit the loop
+                }
+                # other statements
+            }
+        </pre>
+        <p>Example:</p>
+        <pre>
+            for (i in 1:10) {
+                if (i == 6) {
+                    break  # exit the loop when i equals 6
+                }
+                print(paste("Iteration:", i))
+            }
+        </pre>
+        <output>
+            [1] "Iteration: 1"
+            [1] "Iteration: 2"
+            [1] "Iteration: 3"
+            [1] "Iteration: 4"
+            [1] "Iteration: 5"
+        </output>
+        <h2>next statement</h2>
+        <p>It is used to skip the current iteration of a loop and move to the next iteration.</p>
+        syntax:
+        <pre>
+            for (variable in sequence) {
+                if (condition) {
+                    next  # skip to the next iteration
+                }
+                # other statements
+            }
+        </pre>
+        <p>Example:</p>
+        <pre>
+            for (i in 1:10) {
+                if (i %% 2 == 0) {
+                    next  # skip even numbers
+                }
+                print(paste("Odd number:", i))
+            }
+        </pre>
+        <output>
+            [1] "Odd number: 1"
+            [1] "Odd number: 3"
+            [1] "Odd number: 5"
+            [1] "Odd number: 7"
+            [1] "Odd number: 9"
+        </output>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
