@@ -115,8 +115,6 @@ button:hover {
   font-weight: 400;
 }
 pre{
-  white-space: pre-wrap;
-  word-wrap: break-word;
   background: #f1f1f1;
   padding: 1rem;
   border-radius: 8px;
